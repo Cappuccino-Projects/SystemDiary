@@ -4,6 +4,7 @@ SystemDiary - проект команды Cappuccino
 ### DataBaseContext
 ### Models
 ### ModelValidator
+Модуль для валидации моделей<br/>
 ### SystemDiaryClient
 ### ValidatorTest
 ### WebApi
