@@ -1,0 +1,37 @@
+﻿@page "/Authiticate"
+@model SystemDiaryClient.Pages.AuthiticateModel
+
+@{
+    ViewData["Title"] = "Авторизация в системе";
+}
+
+<form method="POST" id="form">
+    <p>Логин</p>
+    <span>ошибка</span><br/>
+    <input type="text" placeholder="Ваш Логин или E-Mail" name="login" id="login" />
+    
+    <p>Пароль</p>
+    <span>ошибка</span><br/>
+    <input type="password" placeholder="Ваш пароль" name="password" id="password" /><br />
+
+    <input type="submit" value="Войти" />
+</form>
+
+@section Scripts
+{
+<script type="text/javascript">
+
+    $('#form').on('submit', (e) => {
+
+        var data = {
+            login: $('#login').val(),
+            password: $('#password').val()
+        };
+
+        login(data);
+
+        e.preventDefault();
+    });
+
+</script>
+}

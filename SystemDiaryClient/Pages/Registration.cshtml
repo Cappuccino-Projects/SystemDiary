@@ -1,0 +1,54 @@
+﻿@page "/Registration"
+@model SystemDiaryClient.Pages.RegistrationModel
+
+@{
+    ViewData["Title"] = "Регистрация в системе";
+}
+
+<form method="POST">
+
+    <p>Имя</p>
+    <input type="text" placeholder="Введите имя" /><br />
+
+    <p>Фамилия</p>
+    <input type="text" placeholder="Введите фимилию" /><br />
+
+    <p>Отчество</p>
+    <input type="text" placeholder="Введите отчество" /><br />
+
+    <p>Возраст</p>
+    <input type="number" value="12" /><br />
+
+    <p>Я являюсь</p>
+    <div>
+        <input name="gender-selection" type="radio" id="gender-male"/>
+        <label for="gender-male">студентом</label><br />
+
+        <input name="gender-selection" type="radio" id="gender-female"/>
+        <label for="gender-female">студенткой</label><br />
+    </div>
+
+    <p>E-Mail</p>
+    <input type="text" placeholder="Введите E-Mail" /><br />
+
+    <p>Логин</p>
+    <input type="text" placeholder="Введите логин" /><br />
+
+    <p>Пароль</p>
+    <input type="text" placeholder="Введите пароль" /><br />
+
+    <p>Пароль</p>
+    <input type="text" placeholder="Подтверждение пароля" /><br />
+
+    <input type="submit" value="Регистрация" />
+
+</form>
+
+@section Scripts 
+{
+    <script type="text/javascript">
+    
+        var data = {};
+
+    </script>
+}
