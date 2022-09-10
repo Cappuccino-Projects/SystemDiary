@@ -1,7 +1,9 @@
 ﻿using DataBaseContext.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Models.Associations;
+using Models.Disciplines;
 using Models.Groups;
+using Models.News;
 using Models.Users;
 
 namespace DataBaseContext.Mssql
@@ -12,16 +14,22 @@ namespace DataBaseContext.Mssql
         public DbSet<UserRole>? UserRoles { get; set; }
         public DbSet<UserState>? UserStates { get; set; }
         public DbSet<UserPermission>? UserPermissions { get; set; }
-        public DbSet<PermissionAndRole>? PermissionsAndRoles  { get; set; }
         public DbSet<Group>? Groups { get; set; }
         public DbSet<GroupState>? GroupStates { get; set; }
-        public DbSet<GroupAndUser>? GroupAndUsers { get; set; }
-        public DbSet<AssociateState>? AssociateStates { get; set; }
+        public DbSet<GroupAndUserAssociate>? GroupAndUsers { get; set; }
+        public DbSet<GlobalAssociateState>? AssociateStates { get; set; }
+        public DbSet<PermissionAndRoleAssociate>? PermissionsAndRoles { get; set; }
+        public DbSet<NewsModel>? News { get; set; }
+        public DbSet<NewsState>? NewsStates { get; set; }
+        public DbSet<DisciplineModel>? Disciplines { get; set; }
+        public DbSet<DisciplineState>? DisciplineStates { get; set; }
 
         public MssqlContext(DbContextOptions<MssqlContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
+
+        #region Implementation
 
         public DbSet<User>? GetUsers() => Users;
 
@@ -37,16 +45,26 @@ namespace DataBaseContext.Mssql
             {
                 Id = Guid.NewGuid(),
                 Name = "Администратор",
-                Description = "Администратор системы SystemDiary"
+                Description = "Администратор системы SystemDiary",
+                BackendName = "backend_admin"
             };
-            
-            UserRole userRoleStudent = new UserRole() 
+
+            UserRole userRoleTeacher = new UserRole()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Преподаватель",
+                Description = "Препадаёт",
+                BackendName = "backend_teacher"
+            };
+
+            UserRole userRoleStudent = new UserRole()
             {
                 Id = Guid.NewGuid(),
                 Name = "Студент",
-                Description = "Тот кого эта ситема юзает"
+                Description = "Тот кто обучается",
+                BackendName = "backend_student"
             };
-            
+
             UserPermission userAdminPermission = new UserPermission()
             {
                 Id = Guid.NewGuid(),
@@ -56,13 +74,13 @@ namespace DataBaseContext.Mssql
                 Description = "Может ли пользователь редактировать данные других пользователей"
             };
 
-            UserPermission userStudentPermission = new UserPermission() 
+            UserPermission userStudentPermission = new UserPermission()
             {
                 Id = Guid.NewGuid(),
-                RoleId= userRoleStudent.Id,
-                Name = "canUserViewPages",
+                RoleId = userRoleStudent.Id,
+                Name = "canUserSetMarks",
                 IsEnabled = true,
-                Description = "Может ли пользователь просматривать страницы"
+                Description = "Может ли пользователь устанавливать значения оценок"
             };
 
             UserState userActiveState = new UserState()
@@ -76,58 +94,74 @@ namespace DataBaseContext.Mssql
             {
                 Id = Guid.NewGuid(),
                 Name = "Не активный",
-                Description = "Что закибербулили тебя?"
+                Description = "Аккаунт не активный"
             };
 
-            User user = new User()
-            {
-                Id = Guid.NewGuid(),
-                PublicId = Guid.NewGuid(),
-                Name = "Алексей",
-                Surname = "Волков",
-                Fathername = "Викторович",
-                Login = "lo4gen73",
-                Gender = Genders.Male,
-                Email = "alex.volkovdd@gmail.com",
-                Password = "А_зАчЕм7",
-                Age = 18,
-                LastSession = DateTime.Now,
-                StateId = userActiveState.Id,
-                RoleId = userRoleAdmin.Id,
-            };
-
-            PermissionAndRole permissionAndRole1 = new PermissionAndRole()
+            PermissionAndRoleAssociate permissionAndRole1 = new PermissionAndRoleAssociate()
             {
                 Id = Guid.NewGuid(),
                 RoleId = userRoleAdmin.Id,
                 PermissionId = userAdminPermission.Id
             };
 
-            PermissionAndRole permissionAndRole2 = new PermissionAndRole() 
+            PermissionAndRoleAssociate permissionAndRole2 = new PermissionAndRoleAssociate()
             {
                 Id = Guid.NewGuid(),
                 RoleId = userRoleStudent.Id,
-                PermissionId= userStudentPermission.Id
+                PermissionId = userStudentPermission.Id
             };
 
-            PermissionAndRole permissionAndRole3 = new PermissionAndRole() 
+            PermissionAndRoleAssociate permissionAndRole3 = new PermissionAndRoleAssociate()
             {
                 Id = Guid.NewGuid(),
                 RoleId = userRoleAdmin.Id,
                 PermissionId = userStudentPermission.Id
             };
 
+            PermissionAndRoleAssociate permissionAndRole4 = new PermissionAndRoleAssociate()
+            {
+                Id = Guid.NewGuid(),
+                RoleId = userRoleTeacher.Id,
+                PermissionId = userStudentPermission.Id
+            };
+
+            DisciplineState disciplineActive = new DisciplineState() 
+            {
+                Id = Guid.NewGuid(),
+                Name = "Активная",
+                Description = "Дисциплина активная"
+            };
+
+            DisciplineState disciplineRemoved = new DisciplineState()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Удалена",
+                Description = "Дисциплина удалена"
+            };
+
+            DisciplineStates?.Add(disciplineActive);
+            DisciplineStates?.Add(disciplineRemoved);
+
             UserPermissions?.Add(userAdminPermission);
             UserPermissions?.Add(userStudentPermission);
+
             UserRoles?.Add(userRoleAdmin);
+            UserRoles?.Add(userRoleTeacher);
             UserRoles?.Add(userRoleStudent);
+
             UserStates?.Add(userDisabledState);
             UserStates?.Add(userActiveState);
-            Users?.Add(user);
+
             PermissionsAndRoles?.Add(permissionAndRole1);
             PermissionsAndRoles?.Add(permissionAndRole2);
             PermissionsAndRoles?.Add(permissionAndRole3);
+            PermissionsAndRoles?.Add(permissionAndRole4);
 
+            SaveChanges();
+        }
+
+        public void Save()
+        {
             SaveChanges();
         }
 
@@ -135,10 +169,21 @@ namespace DataBaseContext.Mssql
 
         public DbSet<GroupState>? GetGroupStates() => GroupStates;
 
-        public DbSet<AssociateState>? GetAssociateStates() => AssociateStates;
+        public DbSet<GlobalAssociateState>? GetAssociateStates() => AssociateStates;
 
-        public DbSet<GroupAndUser>? GetGroupsAndUsers() => GroupAndUsers;
+        public DbSet<GroupAndUserAssociate>? GetGroupsAndUsers() => GroupAndUsers;
 
-        public DbSet<PermissionAndRole>? GetPermissionsAndRoles() => PermissionsAndRoles;
+        public DbSet<PermissionAndRoleAssociate>? GetPermissionsAndRoles() => PermissionsAndRoles;
+
+        public DbSet<NewsModel>? GetNews() => News;
+
+        public DbSet<NewsState>? GetNewsStates() => NewsStates;
+
+        public DbSet<DisciplineModel>? GetDisciplines() => Disciplines;
+
+        public DbSet<DisciplineState>? GetDisciplineStates() => DisciplineStates;
+
+        #endregion
+
     }
 }

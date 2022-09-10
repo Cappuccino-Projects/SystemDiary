@@ -21,17 +21,14 @@ namespace ModelValidator.ModelsValidator
             {
                 bool isValid = field.Check();
 
-                if (isValid)
+                if (!isValid)
                 {
-                    OnSuccess();
-                }
-                else
-                {
-                    field.Interrupt();
+                    field.RegistMistake();
                     OnFailed(field.GetErrorMessage());
                     return;
                 }
             }
+            OnSuccess();
         }
     }
 }

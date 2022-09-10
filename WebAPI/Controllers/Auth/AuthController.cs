@@ -18,32 +18,37 @@ namespace WebAPI.Controllers.Auth
 
         private readonly IDataBaseContext _context;
 
-        public AuthController(IDataBaseContext context) 
+        public AuthController(IDataBaseContext context)
         {
             _context = context;
         }
 
         [AllowAnonymous]
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromForm] Authirization authirization) 
+        public IActionResult Login([FromForm] Authirization authirization)
         {
             IActionResult result = BadRequest("Неизвестная ошибка!");
 
-            AuthirizationModelValidator validator = 
+            AuthirizationModelValidator validator =
                 new AuthirizationModelValidator(authirization);
 
             validator.Validate(
-                () => result = Ok(),
+                async () =>
+                {
+                    var user = _context.GetUsers()?
+                        .Where(user => ((user.Email == authirization.Login) ||
+                                        (user.Login == authirization.Login)) &&
+                                        (user.Password == authirization.Password))
+                        .FirstOrDefault();
+
+                    result = (user == null) ?
+                        BadRequest("Пользователь не найден!") : Ok();
+
+                    if (user != null)
+                        await Authenticate(user.PublicId);
+                },
                 (message) => result = BadRequest(message));
 
-            var user = _context.GetUsers()?
-                .Where(user => ((user.Email == authirization.Login) || (user.Login == authirization.Login)) && (user.Password == authirization.Password))
-                .FirstOrDefault();
-
-            result = (user == null) ? BadRequest("Пользователь не найден!") : Ok();
-            
-            if (user != null)
-                await Authenticate(user.PublicId);
 
             return result;
         }
@@ -58,24 +63,35 @@ namespace WebAPI.Controllers.Auth
                 new RegistrationModelValidator(registration);
 
             validator.Validate(
-                () => result = Ok(),
+                () =>
+                {
+                    if (_context.GetUsers()?.Count() == 0)
+                        _context.CreateDefaultValues();
+
+                    if (CheckUserDataForUniqueness(registration))
+                    {
+                        result = Ok();
+                        CreateNewRecord(registration);
+                    }
+                    else
+                    {
+                        result = BadRequest("Данные пользователя уже есть в базе");
+                    }
+                },
                 (message) => result = BadRequest(message));
-
-            result = CheckUserDataForUniqueness(registration) ? 
-                Ok() : BadRequest("Данные пользователя уже есть в базе");
-
-            CreateNewRecord(registration);
 
             return result;
         }
 
         [Authorize]
         [HttpPost("Logout")]
-        public async Task<IActionResult> Logout() 
+        public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
             return Ok();
         }
+
+        #region AdditionalMethods
 
         [NonAction]
         private void CreateNewRecord(Registration registration)
@@ -87,25 +103,51 @@ namespace WebAPI.Controllers.Auth
                 Name = registration.Name,
                 Surname = registration.Surname,
                 Fathername = registration.FatherName,
-                Age = 0,
+                Gender = registration.Gender,
+                Age = registration.Age,
                 Email = registration.Email,
                 Login = registration.Login,
-                Password = registration.PasswordOriginal
+                Password = registration.PasswordOriginal,
+                RoleId = (_context.GetUsers()?.Count() == 0) ? GetAdminRoleId() : GetStudentRoleId(),
+                StateId = GetActiveState(),
+                LastSession = DateTime.Now
             };
 
             _context.GetUsers()?
                 .Add(user);
+
+            _context.Save();
+        }
+
+        [NonAction]
+        private Guid GetStudentRoleId()
+        {
+            return _context.GetUserRoles()
+                .Where(u => u.BackendName == "backend_student").FirstOrDefault().Id;
+        }
+
+        [NonAction]
+        private Guid GetAdminRoleId()
+        {
+            return _context.GetUserRoles()
+                .Where(u => u.BackendName == "backend_admin").FirstOrDefault().Id;
+        }
+
+        [NonAction]
+        private Guid GetActiveState()
+        {
+            return _context.GetUserStates().ToList()[0].Id;
         }
 
         [NonAction]
         private bool CheckUserDataForUniqueness(Registration registration)
         {
-            return UserEmailIsNotExist(registration.Email) 
+            return UserEmailIsNotExist(registration.Email)
                 && UserLoginIsNotExist(registration.Login);
         }
 
         [NonAction]
-        private bool UserEmailIsNotExist(string email) 
+        private bool UserEmailIsNotExist(string email)
         {
             return _context.GetUsers()?
                 .Where(user => user.Email == email)
@@ -113,13 +155,13 @@ namespace WebAPI.Controllers.Auth
         }
 
         [NonAction]
-        private bool UserLoginIsNotExist(string login) 
+        private bool UserLoginIsNotExist(string login)
         {
             return _context.GetUsers()?.
                 Where(user => user.Login == login)
                 .Count() == 0;
         }
-        
+
         [NonAction]
         public async Task Authenticate(Guid publicId)
         {
@@ -135,5 +177,7 @@ namespace WebAPI.Controllers.Auth
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
+
+        #endregion
     }
 }

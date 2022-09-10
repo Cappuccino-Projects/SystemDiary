@@ -1,5 +1,42 @@
-﻿@page
+﻿@page "/Admin/UserList"
+
 @model SystemDiaryClient.Pages.Admin.UserListModel
+
 @{
     ViewData["Title"] = "Список пользователей системы";
 }
+
+<table border="1" class="w-100">
+    <tr>
+        <th>ID</th>
+        <th>PublicId</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>E-Mail</th>
+        <th>Роль</th>
+        <th>Состояние</th>
+        <th>Пол</th>
+    </tr>
+
+    @foreach (var user in @Model.Users) 
+    {
+        var publicId = user.PublicId.ToString();
+        var roleName = @Model.Client.GetUserRole(publicId).Result;
+        var stateName = @Model.Client.GetUserState(publicId).Result;
+
+        <tr>
+            <th>@user.Id</th>
+            <th>@user.PublicId</th>
+            <th><input value = @user.Name /></th>
+            <th><input value = @user.Surname /></th>
+            <th><input value = @user.Fathername /></th>
+            <th><input value = @user.Email /></th>
+            <th>@roleName</th>
+            <th>@stateName</th>
+        </tr>
+
+    }
+
+</table>
+

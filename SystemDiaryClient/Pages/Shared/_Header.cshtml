@@ -1,0 +1,43 @@
+﻿@page
+@using ClientAPI
+@model SystemDiaryClient.Pages.Shared._HeaderModel
+@{
+}
+
+<header class="position-fixed w-100 header">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow h-100">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">SystemDiary</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @if (base.User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                    @{
+                        var client = new Client();
+                        var user = client.GetUserData(base.User.Identity.Name).Result;
+                        var role = client.GetUserRole(base.User.Identity.Name).Result;
+                    }
+                    <button id="button-action-logout">Выйти</button>
+
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column me-3">
+                            <div class="w-100 text-end">
+                                <a class="h5 text-decoration-none" href="/Profile">@user.Name @user.Surname</a>
+                            </div>
+                            <div class="w-100 text-end">
+                                <span class="h6">@role</span>
+                            </div>
+                        </div>
+                        <div class="profile_image">
+                            <img>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </nav>
+</header>

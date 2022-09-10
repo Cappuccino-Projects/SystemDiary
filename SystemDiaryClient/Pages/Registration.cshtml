@@ -5,50 +5,78 @@
     ViewData["Title"] = "Регистрация в системе";
 }
 
-<form method="POST">
+<form method="POST" id="form">
 
     <p>Имя</p>
-    <input type="text" placeholder="Введите имя" /><br />
+    <input type="text" placeholder="Введите имя" id="reg-field-name" /><br />
 
     <p>Фамилия</p>
-    <input type="text" placeholder="Введите фимилию" /><br />
+    <input type="text" placeholder="Введите фимилию" id="reg-field-surname" /><br />
 
     <p>Отчество</p>
-    <input type="text" placeholder="Введите отчество" /><br />
+    <input type="text" placeholder="Введите отчество" id="reg-field-fathername" /><br />
 
     <p>Возраст</p>
-    <input type="number" value="12" /><br />
+    <input type="number" value="12" id="reg-field-age" /><br />
 
     <p>Я являюсь</p>
     <div>
-        <input name="gender-selection" type="radio" id="gender-male"/>
+        <input name="gender-selection" type="radio" id="reg-field-gender-male" />
         <label for="gender-male">студентом</label><br />
 
-        <input name="gender-selection" type="radio" id="gender-female"/>
+        <input name="gender-selection" type="radio" id="reg-field-gender-female" />
         <label for="gender-female">студенткой</label><br />
     </div>
 
     <p>E-Mail</p>
-    <input type="text" placeholder="Введите E-Mail" /><br />
+    <input type="text" placeholder="Введите E-Mail" id="reg-field-email" /><br />
 
     <p>Логин</p>
-    <input type="text" placeholder="Введите логин" /><br />
+    <input type="text" placeholder="Введите логин" id="reg-field-login" /><br />
 
     <p>Пароль</p>
-    <input type="text" placeholder="Введите пароль" /><br />
+    <input type="text" placeholder="Введите пароль" id="reg-field-password" /><br />
 
     <p>Пароль</p>
-    <input type="text" placeholder="Подтверждение пароля" /><br />
+    <input type="text" placeholder="Подтверждение пароля" id="reg-field-double-password" /><br />
 
-    <input type="submit" value="Регистрация" />
+    <input type="submit" value="Регистрация" id="btn-action-regist" />
 
 </form>
 
-@section Scripts 
+@section Scripts
 {
-    <script type="text/javascript">
-    
-        var data = {};
+<script type="text/javascript">
 
-    </script>
+    $('#form').on('submit', function(e) {
+
+        var
+            name_value = $('#reg-field-name').val(),
+            surname_value = $('#reg-field-surname').val(),
+            fatherName_value = $('#reg-field-fathername').val(),
+            age_value = $('#reg-field-age').val(),
+            gender_value = $('#reg-field-gender-male').is(':checked') ? "Male" : $('#reg-field-gender-female').is(':checked') ? "Female" : "None",
+            email_value = $('#reg-field-email').val(),
+            login_value = $('#reg-field-login').val(),
+            password_value = $('#reg-field-password').val(),
+            passwordDouble_value = $('#reg-field-double-password').val();
+
+        var data = {
+            name: name_value,
+            surname: surname_value,
+            fatherName: fatherName_value,
+            age: age_value,
+            gender: gender_value,
+            email: email_value,
+            login: login_value,
+            passwordOriginal: password_value,
+            passwordDoublicate: passwordDouble_value
+        };
+
+        registration(data);
+
+        e.preventDefault();
+    });
+
+</script>
 }

@@ -16,10 +16,20 @@ namespace WebAPI.Controllers.Users
         }
 
         [HttpPost("Add")]
-        public IActionResult AddRole(UserRole role)
+        public void AddRole(UserRole role)
         { 
-            _context.GetUserRoles()?.Add(role);
-            return Ok();
+            _context.GetUserRoles()?
+                .Add(role);
+
+            _context.Save();
         }
+
+        [HttpPost("Get/All")]
+        public List<UserRole> GetUserRoles()
+        {
+            return _context.GetUserRoles()?
+                .ToList() ?? new List<UserRole>();
+        }
+
     }
 }

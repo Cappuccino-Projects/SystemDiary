@@ -16,16 +16,19 @@ namespace WebAPI.Controllers.Users
         }
 
         [HttpPost("Add")]
-        public IActionResult AddPermission(UserPermission userPermission) 
+        public void AddPermission(UserPermission userPermission)
         {
-            _context.GetUserPermissions()?.Add(userPermission);
-            return Ok();
+            _context.GetUserPermissions()?
+                .Add(userPermission);
+
+            _context.Save();
         }
 
-        [HttpPost("Test")]
-        public IActionResult Test() 
+        [HttpPost("Get/All")]
+        public List<UserPermission> GetAllPermissions()
         {
-            return Ok();
+            return _context.GetUserPermissions()?
+                .ToList() ?? new List<UserPermission>();
         }
     }
 }

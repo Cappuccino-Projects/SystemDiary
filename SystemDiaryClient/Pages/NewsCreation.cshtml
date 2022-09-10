@@ -1,0 +1,17 @@
+﻿@page "/News/Create"
+@model SystemDiaryClient.Pages.NewsCreationModel
+@{
+    ViewData["Title"] = "Добавление новостной записи";
+}
+
+<form method="POST">
+
+    <span>Заголовок новости</span><br/>
+    <input placeholder="Придумайте заголовок" /><br/>
+
+    <span>Контент новости</span><br/>
+    <textarea placeholder="Контент"></textarea><br/>
+
+    <input type="submit" value="Создать новость"/>
+
+</form>

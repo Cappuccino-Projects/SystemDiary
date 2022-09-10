@@ -9,12 +9,12 @@ namespace ModelValidator.ModelsValidator
 
         private Queue<IEvaluateField> _validFields = new Queue<IEvaluateField>();
 
-        public RegistrationModelValidator(Registration registration) 
+        public RegistrationModelValidator(Registration registration)
         {
             _validFields.Enqueue(new LoginEvaluateField(registration.Login));
             _validFields.Enqueue(new PasswordEvaluateField(registration.PasswordOriginal));
-            _validFields.Enqueue(new PasswordEvaluateField(registration.PasswordDublicate));
-            _validFields.Enqueue(new PasswordDublicateEvaluateField(registration.PasswordOriginal, registration.PasswordDublicate));
+            _validFields.Enqueue(new PasswordEvaluateField(registration.PasswordDoublicate));
+            _validFields.Enqueue(new PasswordDublicateEvaluateField(registration.PasswordOriginal, registration.PasswordDoublicate));
             _validFields.Enqueue(new NameEvaluateField(registration.Name));
             _validFields.Enqueue(new NameEvaluateField(registration.FatherName));
             _validFields.Enqueue(new SurnameEvaluateField(registration.Surname));
@@ -27,17 +27,14 @@ namespace ModelValidator.ModelsValidator
             {
                 bool isValid = field.Check();
 
-                if (isValid)
+                if (!isValid)
                 {
-                    OnSuccess();
-                }
-                else
-                {
-                    field.Interrupt();
+                    field.RegistMistake();
                     OnFailed(field.GetErrorMessage());
                     return;
                 }
             }
+            OnSuccess();
         }
     }
 }

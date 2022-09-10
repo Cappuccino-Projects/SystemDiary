@@ -1,0 +1,22 @@
+﻿@page
+@model SystemDiaryClient.Pages.Shared._MenuModel
+@{
+}
+
+@if (base.User.Identity.IsAuthenticated)
+{
+    <div class="d-flex flex-column menu h-100">
+        <ul class="list-group">
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/">Главная</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/News">Новости</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Disciplines">Дисциплины</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Jurnal">Журнал</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Timetable">Расписание</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Materials">Материалы</a></li>
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Chats">Чаты</a></li>
+        </ul>
+        <ul class="list-group mt-4">
+            <li class="list-group-item border-0"><a class="text-decoration-none" href="/Settings">Настройки</a></li>
+        </ul>
+    </div>
+}

@@ -23,7 +23,7 @@ namespace ModelValidator.Fields
         public string GetErrorMessage() =>
             _errorMessage ?? string.Empty;
 
-        public void Interrupt() =>
+        public void RegistMistake() =>
             _errorMessage = "Пароли не валидны или не совпадают!";
     }
 }

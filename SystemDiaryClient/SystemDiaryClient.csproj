@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClientAPI\ClientAPI.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\Mssql\DataBaseContext.csproj" />
     <ProjectReference Include="..\WebAPI\WebAPI.csproj" />

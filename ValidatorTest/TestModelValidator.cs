@@ -25,7 +25,7 @@ namespace ValidatorTest
             }
             else
             {
-                _validFields.Interrupt();
+                _validFields.RegistMistake();
                 OnFailed(_validFields.GetErrorMessage());
                 return;
             }

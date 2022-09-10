@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Models.Associations
 {
     [Table("group_and_user_associations")]
-    public sealed class GroupAndUser
+    public sealed class GroupAndUserAssociate
     {
         [Key]
         [Required]
@@ -29,6 +29,6 @@ namespace Models.Associations
 
         public Group? Group { get; set; }
 
-        public AssociateState? State { get; set; }
+        public GlobalAssociateState? State { get; set; }
     }
 }

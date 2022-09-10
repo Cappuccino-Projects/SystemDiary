@@ -19,7 +19,7 @@ namespace ValidatorTest
         public string GetErrorMessage() 
             => _errorMessage ?? string.Empty;
 
-        public void Interrupt() => 
+        public void RegistMistake() => 
             _errorMessage = "Ошибка тестового поля!";
     }
 }

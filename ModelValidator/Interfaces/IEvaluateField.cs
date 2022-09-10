@@ -3,7 +3,7 @@
     public interface IEvaluateField
     {
         public bool Check();
-        public void Interrupt();
+        public void RegistMistake();
         public string GetErrorMessage();
     }
 }

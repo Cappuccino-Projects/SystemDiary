@@ -33,6 +33,8 @@ app.UseWebApi();
 
 app.UseCookiePolicy();
 
+app.UseExceptionHandler("/Error");
+app.UseStatusCodePagesWithRedirects("/Error");
 
 app.UseAuthentication();
 app.UseRouting();

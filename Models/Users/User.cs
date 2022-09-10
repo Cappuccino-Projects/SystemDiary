@@ -42,7 +42,7 @@ namespace Models.Users
 
         [Required]
         [Column("user_age", TypeName = "int")]
-        public uint Age { get; set; }
+        public int Age { get; set; }
 
         [Required]
         [Column("user_gender", TypeName = "varchar(10)")]
@@ -62,7 +62,7 @@ namespace Models.Users
 
         public UserRole? Role { get; set; }
         public UserState? State { get; set; }
-        public List<GroupAndUser>? GroupAndUser { get; set; }
+        public List<GroupAndUserAssociate>? GroupAndUser { get; set; }
     }
 
     public enum Genders 

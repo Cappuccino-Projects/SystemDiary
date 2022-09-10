@@ -15,12 +15,16 @@ namespace Models.Users
         [Required]
         [Column("user_role_name", TypeName = "varchar(25)")]
         public string Name { get; set; } = "role_name";
+        
+        [Required]
+        [Column("user_role_backend_name", TypeName = "varchar(25)")]
+        public string? BackendName { get; set; }
 
         [Required]
         [Column("user_role_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }
 
         public List<User>? Users { get; set; }
-        public List<PermissionAndRole>? PermissionAndRoles { get; set; }
+        public List<PermissionAndRoleAssociate>? PermissionAndRoles { get; set; }
     }
 }

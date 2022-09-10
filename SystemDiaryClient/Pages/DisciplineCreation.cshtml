@@ -1,0 +1,20 @@
+﻿@page "/Disciplines/Add"
+@model SystemDiaryClient.Pages.DisciplineCreationModel
+@{
+    ViewData["Title"] = "Добавление дисциплины";
+}
+
+<h1>Добавление дисциплины</h1>
+
+<form method="POST">
+    <span>Имя дисциплины</span><br/>
+    <input type="text" id="create_dicipline_name"/><br/>
+    <span>Описание</span><br/>
+    <textarea id="create_dicipline_description"></textarea>
+    <input type="submit" value="Создать" />
+</form>
+
+@section Scripts 
+{
+    <script type="text/javascript" src="~/js/client-api//discipline.js"></script>
+}

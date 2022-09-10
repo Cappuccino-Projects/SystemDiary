@@ -4,7 +4,6 @@ namespace ModelValidator.Fields
 {
     public sealed class PasswordEvaluateField : IEvaluateField
     {
-
         private readonly string? _value;
         private string? _errorMessage;
 
@@ -19,7 +18,7 @@ namespace ModelValidator.Fields
         public string GetErrorMessage() => 
             _errorMessage ?? string.Empty;
 
-        public void Interrupt() => 
+        public void RegistMistake() => 
             _errorMessage = "Ошибка пароля!";
     }
 }

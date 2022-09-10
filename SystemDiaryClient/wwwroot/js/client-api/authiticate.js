@@ -20,7 +20,7 @@ function registration(data) {
         data: data,
         async: false
     }).done((response) => {
-
+        window.location.href = "/Authiticate";
     }).fail((error) => {
         console.log(error);
     });

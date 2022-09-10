@@ -1,0 +1,23 @@
+﻿@page "/Disciplines"
+@model SystemDiaryClient.Pages.Disciplines
+@{
+    ViewData["Title"] = "Дисциплины";
+}
+
+<a href="/Disciplines/Add">Добавить дисциплину</a>
+
+@if ((Model.DisciplinesModels == null) || (Model.DisciplinesModels.Count() == 0))
+{
+    
+    <p>Дисциплин нет</p>
+
+} 
+else
+{
+
+    @foreach (var item in Model.DisciplinesModels)
+    {
+        <p>@item.Name</p>
+    }
+
+}

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Models.Associations
 {
     [Table("group_and_users_associate_states")]
-    public sealed class AssociateState
+    public sealed class GlobalAssociateState
     {
         [Key]
         [Required]
@@ -13,7 +13,7 @@ namespace Models.Associations
 
         [Required]
         [Column("group_and_users_associate_state_name", TypeName = "varchar(25)")]
-        public string Name { get; set; } = "default_group_and_users_associate_name";
+        public string? Name { get; set; }
 
         [Column("group_and_users_associate_state_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }

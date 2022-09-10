@@ -18,7 +18,7 @@ namespace Models.Users
 
         [Required]
         [Column("user_permission_name", TypeName = "varchar(25)")]
-        public string Name { get; set; } = "permission_name";
+        public string? Name { get; set; }
 
         [Column("user_permission_is_enabled")]
         public bool IsEnabled { get; set; } = false;
@@ -26,6 +26,6 @@ namespace Models.Users
         [Column("user_permission_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }
 
-        public List<PermissionAndRole>? PermissionAndRoles { get; set; }
+        public List<PermissionAndRoleAssociate>? PermissionAndRoles { get; set; }
     }
 }

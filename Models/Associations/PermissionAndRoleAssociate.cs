@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Models.Associations
 {
     [Table("permissions_and_roles_associates")]
-    public sealed class PermissionAndRole
+    public sealed class PermissionAndRoleAssociate
     {
         [Key]
         [Required]

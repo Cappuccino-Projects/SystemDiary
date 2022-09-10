@@ -1,5 +1,4 @@
 ﻿using Models.Abstract;
-using System.ComponentModel.DataAnnotations;
 
 namespace Models.Authirization
 {
@@ -7,7 +6,6 @@ namespace Models.Authirization
     {
         public string Login { get; set; } = "";
         
-        [DataType(DataType.Password)]
         public string Password { get; set; } = "";
     }
 }
