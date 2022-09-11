@@ -5,11 +5,13 @@ namespace SystemDiaryClient.Pages
 {
     public class JurnalModel : PageModel
     {
-        public List<string> Subjects { get; set; }
+        public List<string> Subjects { get => _subjects; set => _subjects = value; }
+        public int DaysInThisMonth { get => _daysInThisMonth; set => _daysInThisMonth = value; }
 
         private List<string> _subjects;
+        private int _daysInThisMonth;
 
-        public JurnalModel() 
+        public JurnalModel()
         {
             _subjects = new();
 
@@ -19,10 +21,14 @@ namespace SystemDiaryClient.Pages
             _subjects.Add("‘из-ра");
         }
 
-
-        public void OnGet()
+        public void OnGetAsync()
         {
-
+            _daysInThisMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
         }
     }
 }
+
+
+/*
+ *  Shut you month!
+ */

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Models.Associations;
 using Models.Disciplines;
 using Models.Groups;
+using Models.Marks;
 using Models.News;
 using Models.Users;
 
@@ -10,6 +11,8 @@ namespace DataBaseContext.Mssql
 {
     public sealed class MssqlContext : DbContext, IDataBaseContext
     {
+        #region Fields
+
         public DbSet<UserModel>? Users { get; set; }
         public DbSet<UserRole>? UserRoles { get; set; }
         public DbSet<UserState>? UserStates { get; set; }
@@ -23,6 +26,10 @@ namespace DataBaseContext.Mssql
         public DbSet<NewsState>? NewsStates { get; set; }
         public DbSet<DisciplineModel>? Disciplines { get; set; }
         public DbSet<DisciplineState>? DisciplineStates { get; set; }
+        public DbSet<MarkModel>? Marks { get; set; }
+        public DbSet<MarkStateModel>? MarkStates { get; set; }
+
+        #endregion
 
         public MssqlContext(DbContextOptions<MssqlContext> options) : base(options)
         {
@@ -167,6 +174,64 @@ namespace DataBaseContext.Mssql
                 Description = "Этой ассоциации не существует"
             };
 
+            MarkStateModel markStateActive = new MarkStateModel() 
+            {
+                Id = Guid.NewGuid(),
+                Name = "Активная",
+                Description = "Оценка активная"
+            };
+
+            MarkStateModel markStateDeleted = new MarkStateModel()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Удалена",
+                Description = "Оценка удалена, её использование не возможно"
+            };
+
+            MarkModel excellentGrade = new MarkModel() 
+            {
+                Id = Guid.NewGuid(),
+                Markup = "5",
+                Value = 5,
+                Description = "Оценка отлично",
+                StateId = markStateActive.Id
+            };
+
+            MarkModel ratingOfGood = new MarkModel() 
+            {
+                Id = Guid.NewGuid(),
+                Markup = "4",
+                Value = 4,
+                Description = "Оценка хорошо",
+                StateId = markStateActive.Id
+            };
+
+            MarkModel fairRating = new MarkModel() 
+            {
+                Id = Guid.NewGuid(),
+                Markup = "3",
+                Value = 3,
+                Description = "Оценка удовлетворительно",
+                StateId = markStateActive.Id
+            };
+
+            MarkModel poorGrade = new MarkModel()
+            {
+                Id = Guid.NewGuid(),
+                Markup = "2",
+                Value = 2,
+                Description = "Оценка плохо",
+                StateId = markStateActive.Id
+            };
+
+            MarkStates?.Add(markStateActive);
+            MarkStates?.Add(markStateDeleted);
+
+            Marks?.Add(excellentGrade);
+            Marks?.Add(ratingOfGood);
+            Marks?.Add(fairRating);
+            Marks?.Add(poorGrade);
+
             AssociateStates?.Add(globalAssociateStateActive);
             AssociateStates?.Add(globalAssociateStateDeleted);
 
@@ -216,6 +281,10 @@ namespace DataBaseContext.Mssql
         public DbSet<DisciplineModel>? GetDisciplines() => Disciplines;
 
         public DbSet<DisciplineState>? GetDisciplineStates() => DisciplineStates;
+
+        public DbSet<MarkModel>? GetMarks() => Marks;
+
+        public DbSet<MarkStateModel>? GetMarkStates() => MarkStates;
 
         #endregion
 

@@ -2,6 +2,7 @@
 using Models.Associations;
 using Models.Disciplines;
 using Models.Groups;
+using Models.Marks;
 using Models.News;
 using Models.Users;
 
@@ -24,5 +25,7 @@ namespace DataBaseContext.Interfaces
         public DbSet<NewsState>? GetNewsStates();
         public DbSet<DisciplineModel>? GetDisciplines();
         public DbSet<DisciplineState>? GetDisciplineStates();
+        public DbSet<MarkModel>? GetMarks();
+        public DbSet<MarkStateModel>? GetMarkStates();
     }
 }

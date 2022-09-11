@@ -2,7 +2,7 @@
 
 namespace Models.Authirization
 {
-    public sealed class Authirization : AbstractModel
+    public sealed class AuthirizationFormModel : FormAbstract
     {
         public string Login { get; set; } = "";
         

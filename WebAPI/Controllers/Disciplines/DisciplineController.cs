@@ -23,7 +23,7 @@ namespace WebAPI.Controllers.Disciplines
         }
 
         [HttpPost("Add")]
-        public IActionResult Create([FromForm] DisciplineCreateModel discipline) 
+        public IActionResult Create([FromForm] DisciplineAddFormModel discipline) 
         {
             if (discipline == null)
                 return BadRequest("Ошибка объекта! IS_NULL");

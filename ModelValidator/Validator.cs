@@ -6,11 +6,11 @@ namespace ModelValidator
 {
     public class Validator
     {
-        private readonly AbstractModel _model;
+        private readonly FormAbstract _model;
         public Action? OnSuccess;
         public Action<string>? OnFailed;
 
-        public Validator(AbstractModel model)
+        public Validator(FormAbstract model)
         {
             _model = model;
         }

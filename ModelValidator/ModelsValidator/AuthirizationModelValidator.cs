@@ -9,7 +9,7 @@ namespace ModelValidator.ModelsValidator
 
         private Queue<IEvaluateField> _validFields = new Queue<IEvaluateField>();
 
-        public AuthirizationModelValidator(Authirization authirization)
+        public AuthirizationModelValidator(AuthirizationFormModel authirization)
         {
             _validFields.Enqueue(new LoginEvaluateField(authirization.Login));
             _validFields.Enqueue(new PasswordEvaluateField(authirization.Password));

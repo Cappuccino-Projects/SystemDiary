@@ -25,7 +25,7 @@ namespace WebAPI.Controllers.Auth
 
         [AllowAnonymous]
         [HttpPost("Login")]
-        public IActionResult Login([FromForm] Authirization authirization)
+        public IActionResult Login([FromForm] AuthirizationFormModel authirization)
         {
             IActionResult result = BadRequest("Неизвестная ошибка!");
 
@@ -55,7 +55,7 @@ namespace WebAPI.Controllers.Auth
 
         [AllowAnonymous]
         [HttpPost("Registration")]
-        public IActionResult Registration([FromForm] Registration registration)
+        public IActionResult Registration([FromForm] RegistrationFormModel registration)
         {
             IActionResult result = BadRequest("Неизвестная ошибка!");
 
@@ -94,7 +94,7 @@ namespace WebAPI.Controllers.Auth
         #region AdditionalMethods
 
         [NonAction]
-        private void CreateNewRecord(Registration registration)
+        private void CreateNewRecord(RegistrationFormModel registration)
         {
             var user = new UserModel()
             {
@@ -140,7 +140,7 @@ namespace WebAPI.Controllers.Auth
         }
 
         [NonAction]
-        private bool CheckUserDataForUniqueness(Registration registration)
+        private bool CheckUserDataForUniqueness(RegistrationFormModel registration)
         {
             return UserEmailIsNotExist(registration.Email)
                 && UserLoginIsNotExist(registration.Login);

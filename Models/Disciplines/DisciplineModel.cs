@@ -23,6 +23,6 @@ namespace Models.Disciplines
         [Column("discipline_description", TypeName = "varchar(500)")]
         public string? Description { get; set; }
 
-        public DisciplineState State { get; set; }
+        public DisciplineState? State { get; set; }
     }
 }

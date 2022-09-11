@@ -1,4 +1,5 @@
 ﻿@page "/Jurnal"
+@using System.Globalization
 @model SystemDiaryClient.Pages.JurnalModel
 @{
     ViewData["Title"] = "Журнал";
@@ -12,274 +13,44 @@
                     <th>
                         Дисциплина
                     </th>
-                    @for (int i = 1; i <= 31; i++)
+
+                    @{
+                        int month = DateTime.Now.Month;
+                        int year = DateTime.Now.Year;
+                        CultureInfo provider = CultureInfo.InvariantCulture;
+                    }
+
+                    @for (int i = 1; i <= Model.DaysInThisMonth; i++)
                     {
-                        <th>@i</th>
+                        @if (DateTime.ParseExact($"{month}/{i}/{year}", "M/d/yyyy", provider).Date.DayOfWeek != DayOfWeek.Sunday)
+                        {
+                            <th>@i</th>
+                        }
                     }
                     <th>Итог</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        Математическое моделирование
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5,00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>Моудли</div>
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
-                <tr>
-                    <td>
-                        Элементы Высшей математики и численные методы
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
-                <tr>
-                    <td>
-                        Элементы Высшей математики и численные методы
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
-                <tr>
-                    <td>
-                        Элементы Высшей математики и численные методы
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
-                <tr>
-                    <td>
-                        Элементы Высшей математики и численные методы
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
-                <tr>
-                    <td>
-                        Элементы Высшей математики и численные методы
 
-                    </td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td></td>
-                    <td>5</td>
-                    <td>4,21</td>
-                </tr>
+                @for (int i = 0; i < Model.Subjects.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.Subjects[i]
+                        </td>
+
+                        @for (int j = 1; j <= Model.DaysInThisMonth; j++)
+                        {
+                            @if (DateTime.ParseExact($"{month}/{j}/{year}", "M/d/yyyy", provider).Date.DayOfWeek != DayOfWeek.Sunday)
+                            {
+                                <td>5</td>
+                            }
+                        }
+                        <td>
+                            VAL
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

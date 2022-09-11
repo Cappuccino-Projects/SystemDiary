@@ -1,5 +1,5 @@
 ﻿namespace Models.Abstract
 {
-    public class AbstractModel
+    public class FormAbstract
     { }
 }

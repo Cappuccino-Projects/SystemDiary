@@ -1,8 +1,8 @@
 ﻿using Models.Abstract;
 
-namespace Models.Groups
+namespace Models.Disciplines
 {
-    public sealed class GroupFormModel : FormAbstract
+    public sealed class DisciplineAddFormModel : FormAbstract
     {
         public string? Name { get; set; }
         public string? Description { get; set; }

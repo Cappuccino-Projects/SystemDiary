@@ -3,7 +3,7 @@ using Models.Users;
 
 namespace Models.Auth
 {
-    public sealed class Registration : AbstractModel
+    public sealed class RegistrationFormModel : FormAbstract
     {
         public string Name { get; set; } = "";
         public string Surname { get; set; } = "";

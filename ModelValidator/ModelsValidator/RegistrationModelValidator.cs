@@ -9,7 +9,7 @@ namespace ModelValidator.ModelsValidator
 
         private Queue<IEvaluateField> _validFields = new Queue<IEvaluateField>();
 
-        public RegistrationModelValidator(Registration registration)
+        public RegistrationModelValidator(RegistrationFormModel registration)
         {
             _validFields.Enqueue(new LoginEvaluateField(registration.Login));
             _validFields.Enqueue(new PasswordEvaluateField(registration.PasswordOriginal));
