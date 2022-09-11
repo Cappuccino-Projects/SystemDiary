@@ -25,9 +25,9 @@ namespace Models.Associations
         [Column("group_and_user_association_state_id", TypeName = "varchar(100)")]
         public Guid AssociateStateId { get; set; }
 
-        public User? User { get; set; }
+        public UserModel? User { get; set; }
 
-        public Group? Group { get; set; }
+        public GroupModel? Group { get; set; }
 
         public GlobalAssociateState? State { get; set; }
     }

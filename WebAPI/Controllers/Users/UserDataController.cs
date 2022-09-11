@@ -19,15 +19,15 @@ namespace WebAPI.Controllers.Users
         }
 
         [HttpPost("Get/All")]
-        public List<User> GetAllUsers() 
+        public List<UserModel> GetAllUsers() 
         {
             return _context
                 .GetUsers()?
-                .ToList() ?? new List<User>();
+                .ToList() ?? new List<UserModel>();
         }
 
         [HttpGet("Get/{publicId}")]
-        public User? GetUserDataByPublicId(string publicId)
+        public UserModel? GetUserDataByPublicId(string publicId)
         {
             Guid id = Guid.Parse(publicId);
 

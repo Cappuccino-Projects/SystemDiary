@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Models.Groups
 {
     [Table("groups")]
-    public sealed class Group
+    public sealed class GroupModel
     {
         [Key]
         [Required]
@@ -22,8 +22,6 @@ namespace Models.Groups
 
         [Column("group_description", TypeName = "varchar(500)")]
         public string? Description { get; set; }
-
-
 
         public GroupState? State { get; set; }
 

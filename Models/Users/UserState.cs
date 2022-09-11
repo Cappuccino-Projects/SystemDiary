@@ -18,6 +18,6 @@ namespace Models.Users
         [Column("user_state_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }
 
-        public List<User>? Users { get; set; }
+        public List<UserModel>? Users { get; set; }
     }
 }

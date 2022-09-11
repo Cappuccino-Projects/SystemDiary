@@ -96,7 +96,7 @@ namespace WebAPI.Controllers.Auth
         [NonAction]
         private void CreateNewRecord(Registration registration)
         {
-            var user = new User()
+            var user = new UserModel()
             {
                 Id = Guid.NewGuid(),
                 PublicId = Guid.NewGuid(),

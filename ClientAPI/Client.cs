@@ -8,7 +8,7 @@ namespace ClientAPI
     {
         #region Users
 
-        public async Task<User> GetUserData(string publicId)
+        public async Task<UserModel> GetUserData(string publicId)
         {
             var client = new RestClient($"https://localhost:7253/api/UserData/Get/{publicId}");
 
@@ -16,7 +16,7 @@ namespace ClientAPI
             request.Method = Method.Get;
             request.RequestFormat = DataFormat.Json;
 
-            return await client.GetAsync<User>(request);
+            return await client.GetAsync<UserModel>(request);
         }
 
         public async Task<string> GetUserRole(string publicId)
@@ -30,7 +30,7 @@ namespace ClientAPI
             return await client.GetAsync<string>(request);
         }
 
-        public async Task<List<User>> GetAllUsers() 
+        public async Task<List<UserModel>> GetAllUsers() 
         {
             var client = new RestClient($"https://localhost:7253/api/UserData/Get/All");
 
@@ -38,7 +38,7 @@ namespace ClientAPI
             request.Method = Method.Get;
             request.RequestFormat = DataFormat.Json;
 
-            return await client.PostAsync<List<User>>(request);
+            return await client.PostAsync<List<UserModel>>(request);
         }
 
         public async Task<string> GetUserState(string publicId) 

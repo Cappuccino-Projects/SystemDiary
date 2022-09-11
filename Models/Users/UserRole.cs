@@ -24,7 +24,7 @@ namespace Models.Users
         [Column("user_role_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }
 
-        public List<User>? Users { get; set; }
+        public List<UserModel>? Users { get; set; }
         public List<PermissionAndRoleAssociate>? PermissionAndRoles { get; set; }
     }
 }

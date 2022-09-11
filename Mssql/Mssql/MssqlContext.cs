@@ -10,11 +10,11 @@ namespace DataBaseContext.Mssql
 {
     public sealed class MssqlContext : DbContext, IDataBaseContext
     {
-        public DbSet<User>? Users { get; set; }
+        public DbSet<UserModel>? Users { get; set; }
         public DbSet<UserRole>? UserRoles { get; set; }
         public DbSet<UserState>? UserStates { get; set; }
         public DbSet<UserPermission>? UserPermissions { get; set; }
-        public DbSet<Group>? Groups { get; set; }
+        public DbSet<GroupModel>? Groups { get; set; }
         public DbSet<GroupState>? GroupStates { get; set; }
         public DbSet<GroupAndUserAssociate>? GroupAndUsers { get; set; }
         public DbSet<GlobalAssociateState>? AssociateStates { get; set; }
@@ -31,7 +31,7 @@ namespace DataBaseContext.Mssql
 
         #region Implementation
 
-        public DbSet<User>? GetUsers() => Users;
+        public DbSet<UserModel>? GetUsers() => Users;
 
         public DbSet<UserState>? GetUserStates() => UserStates;
 
@@ -139,6 +139,40 @@ namespace DataBaseContext.Mssql
                 Description = "Дисциплина удалена"
             };
 
+            GroupState groupStateActive = new GroupState() 
+            {
+                Id = Guid.NewGuid(),
+                Name = "Активная группа",
+                Description = "Эта группа активная"
+            };
+
+            GroupState groupStateDeleted = new GroupState() 
+            {
+                Id = Guid.NewGuid(),
+                Name = "Удалённая группа",
+                Description = "Эта группа удалена"
+            };
+
+            GlobalAssociateState globalAssociateStateActive = new GlobalAssociateState()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Ассоциация активна",
+                Description = "Эта ассоциация активна"
+            };
+
+            GlobalAssociateState globalAssociateStateDeleted = new GlobalAssociateState() 
+            {
+                Id = Guid.NewGuid(), 
+                Name = "Ассоциация удалена",
+                Description = "Этой ассоциации не существует"
+            };
+
+            AssociateStates?.Add(globalAssociateStateActive);
+            AssociateStates?.Add(globalAssociateStateDeleted);
+
+            GroupStates?.Add(groupStateActive);
+            GroupStates?.Add(groupStateDeleted);
+
             DisciplineStates?.Add(disciplineActive);
             DisciplineStates?.Add(disciplineRemoved);
 
@@ -165,7 +199,7 @@ namespace DataBaseContext.Mssql
             SaveChanges();
         }
 
-        public DbSet<Group>? GetGroups() => Groups;
+        public DbSet<GroupModel>? GetGroups() => Groups;
 
         public DbSet<GroupState>? GetGroupStates() => GroupStates;
 

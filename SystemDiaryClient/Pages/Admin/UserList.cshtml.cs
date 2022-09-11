@@ -9,7 +9,7 @@ namespace SystemDiaryClient.Pages.Admin
     [Authorize]
     public class UserListModel : PageModel
     {
-        public List<User> Users { get; set; }
+        public List<UserModel> Users { get; set; }
         public Client Client { get => client; private set => client = value; }
 
         private Client client = new Client();

@@ -10,12 +10,12 @@ namespace DataBaseContext.Interfaces
     public interface IDataBaseContext
     {
         public void CreateDefaultValues();
-        public DbSet<User>? GetUsers();
+        public DbSet<UserModel>? GetUsers();
         public DbSet<UserState>? GetUserStates();
         public DbSet<UserRole>? GetUserRoles();
         public void Save();
         public DbSet<UserPermission>? GetUserPermissions();
-        public DbSet<Group>? GetGroups();
+        public DbSet<GroupModel>? GetGroups();
         public DbSet<GroupState>? GetGroupStates();
         public DbSet<GlobalAssociateState>? GetAssociateStates();
         public DbSet<GroupAndUserAssociate>? GetGroupsAndUsers();

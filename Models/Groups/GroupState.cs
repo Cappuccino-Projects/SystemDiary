@@ -18,6 +18,6 @@ namespace Models.Groups
         [Column("group_state_description", TypeName = "varchar(550)")]
         public string? Description { get; set; }
 
-        public List<Group>? Groups { get; set; }
+        public List<GroupModel>? Groups { get; set; }
     }
 }
