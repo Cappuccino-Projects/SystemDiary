@@ -1,4 +1,4 @@
-#SystemDiary - проект команды Cappuccino
+# SystemDiary - проект команды Cappuccino
 
 ## Предназначение:
 
