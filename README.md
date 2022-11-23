@@ -1,5 +1,4 @@
-#SystemDiary
-SystemDiary - проект команды Cappuccino
+#SystemDiary - проект команды Cappuccino
 
 ## Предназначение:
 
@@ -65,8 +64,8 @@ Backend работает на ASP .NET Core 6 версии. Ещё исполь�
 
 ## Разработчики
 
-[⚽ Бибис](https://vk.com/detskiy_pogreb73)
-[🎈 Somniknight | Анастасия Павловна](https://vk.com/naturalovnet)
-[🎨 Sunflow1e](https://vk.com/sunflow1e)
-[🔋 Oooval](https://vk.com/oooo.o.oooo)
-[💾 LetNull19A](https://vk.com/letnull19a)
+* [⚽ Бибис](https://vk.com/detskiy_pogreb73)
+* [🎈 Somniknight | Анастасия Павловна](https://vk.com/naturalovnet)
+* [🎨 Sunflow1e](https://vk.com/sunflow1e)
+* [🔋 Oooval](https://vk.com/oooo.o.oooo)
+* [💾 LetNull19A](https://vk.com/letnull19a)
