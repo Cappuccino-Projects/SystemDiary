@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Models.Timetable
 {
     [Table("timetable_lessons")]
-    public sealed class TimeTableLessonModel : ModelAbstract
+    public class TimeTableLessonModel : ModelAbstract
     {
         [Key]
         [Required]
@@ -28,18 +28,16 @@ namespace Models.Timetable
 
         [Required]
         [Column("start_lesson")]
-        public string? StartLesson { get; set; }
+        public string StartLesson { get; set; }
 
         [Required]
         [Column("end_lesson")]
-        public string? EndLesson { get; set; }
+        public string EndLesson { get; set; }
 
         [Required]
-        [Column("cabinet_number")]
-        public int CabinetNumber { get; set; }
+        [Column("room_number")]
+        public int RoomNumber { get; set; }
 
-        public TimeTableModel? Timetable { get; set; }
-        public UserModel? Educator { get; set; }
-        public DisciplineModel? Discipline { get; set; }
+        public TimetableModel? TimetableModel { get; set; }
     }
 }

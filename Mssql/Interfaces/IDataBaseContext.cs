@@ -4,17 +4,18 @@ using Models.Disciplines;
 using Models.Groups;
 using Models.Marks;
 using Models.News;
+using Models.Timetable;
 using Models.Users;
 
 namespace DataBaseContext.Interfaces
 {
     public interface IDataBaseContext
     {
+        public void Save();
         public void CreateDefaultValues();
         public DbSet<UserModel>? GetUsers();
         public DbSet<UserState>? GetUserStates();
         public DbSet<UserRole>? GetUserRoles();
-        public void Save();
         public DbSet<UserPermission>? GetUserPermissions();
         public DbSet<GroupModel>? GetGroups();
         public DbSet<GroupState>? GetGroupStates();
@@ -27,5 +28,8 @@ namespace DataBaseContext.Interfaces
         public DbSet<DisciplineState>? GetDisciplineStates();
         public DbSet<MarkModel>? GetMarks();
         public DbSet<MarkStateModel>? GetMarkStates();
+        public DbSet<TimetableModel>? GetTimeTables();
+        public DbSet<TimeTableLessonModel>? GetTableLessons();
+        public DbSet<CabinetModel>? GetCabinets();
     }
 }

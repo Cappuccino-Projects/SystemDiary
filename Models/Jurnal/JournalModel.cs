@@ -30,7 +30,7 @@ namespace Models.Jurnal
         [Column("period_end", TypeName = "datetime")]
         public DateTime End { get; set; }
 
-        public JurnalAndDisciplineAssociateModel? JurnalAndDisciplineAssociation { get; set; }
+        // public JurnalAndDisciplineAssociateModel? JurnalAndDisciplineAssociation { get; set; }
         public GroupModel? Group { get; set; }
         public JournalStateModel? JurnalState { get; set; }
     }

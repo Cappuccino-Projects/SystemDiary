@@ -5,6 +5,7 @@ using Models.Disciplines;
 using Models.Groups;
 using Models.Marks;
 using Models.News;
+using Models.Timetable;
 using Models.Users;
 
 namespace DataBaseContext.Mssql
@@ -28,6 +29,9 @@ namespace DataBaseContext.Mssql
         public DbSet<DisciplineState>? DisciplineStates { get; set; }
         public DbSet<MarkModel>? Marks { get; set; }
         public DbSet<MarkStateModel>? MarkStates { get; set; }
+        public DbSet<TimetableModel>? Timetables { get; set; }
+        public DbSet<TimeTableLessonModel>? TimeTableLessons { get; set; }
+        public DbSet<CabinetModel>? Cabinets { get; set; }
 
         #endregion
 
@@ -285,6 +289,11 @@ namespace DataBaseContext.Mssql
         public DbSet<MarkModel>? GetMarks() => Marks;
 
         public DbSet<MarkStateModel>? GetMarkStates() => MarkStates;
+
+        public DbSet<TimetableModel>? GetTimeTables() => Timetables;
+        public DbSet<TimeTableLessonModel>? GetTableLessons() => TimeTableLessons;
+
+        public DbSet<CabinetModel>? GetCabinets() => Cabinets;
 
         #endregion
 

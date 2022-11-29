@@ -34,9 +34,9 @@ namespace Models.Jurnal
         [Column("date", TypeName = "datetime2")]
         public DateTime Date { get; set; }
 
-        public List<GroupAndStudentAssociateModel>? GroupAndStudentAssociates { get; set; }
-        public List<DisciplineAndEducatorAssociateModel>? DisciplineAndEducatorAssociates { get; set; }
-        public List<JurnalAndDisciplineAssociateModel>? JurnalAndDisciplineAssociates { get; set; }
+        //public List<GroupAndStudentAssociateModel>? GroupAndStudentAssociates { get; set; }
+        //public List<DisciplineAndEducatorAssociateModel>? DisciplineAndEducatorAssociates { get; set; }
+        //public List<JurnalAndDisciplineAssociateModel>? JurnalAndDisciplineAssociates { get; set; }
         public List<MarkModel>? Marks { get; set; }
 
     }
