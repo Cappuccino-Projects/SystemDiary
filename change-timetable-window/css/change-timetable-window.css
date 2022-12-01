@@ -10,48 +10,51 @@ font-family: 'Open Sans', sans-serif;
 
 .change-timetable-view 
 {
-	width: 1000px;
-	height: 1000px;
+	width: auto;
+	height: 697px;
 	background-color: black;
 }
 .change-timetable-window
 {
 	background-color: white;
-	width: 400px ;
+	width: 400px;
 	height: 480px;
-	padding:1.8em;
+	padding:30px;
+	border-radius: 15px;
 }
 
-.change-timetable-window-content
+.change-timetable-window__content
 {
-	text-align: center;
-	border-radius: 15px;
 	margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
-  border-radius: 15px;
 }
 .change__timetable__window-box__title
 {
 	display: flex;
-	width: 352px ;
-	height: 142px; 
+	width: 352px;
+	height: 142px;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-start;
+	margin-bottom: 9.1%;
+	align-items: center;
 }
 .change__timetable__window-box__title__icon 
 {
-	height: 135px;
+	height: 145px;
   width: 135px;
 	background: url(../image/change-timetable-window.png);
 	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-right:8%;
+	margin-left:-4%;
 }
 
 .change__timetable__window-box__title__text
 {
-	width: 192px;
+	width: 180px;
 	height: 93px;
 	font-family: "Open Sans SemiBold";
 	font-size: 2.1em;
@@ -71,11 +74,6 @@ font-family: 'Open Sans', sans-serif;
 	font-style: 'Open Sans Regular';
 }
 
-.change__timetable__window-box__textbox span
-{
-
-}
-
 .change__timetable__window-box__textbox b
 {
 	font-style: 'Open Sans SemiBold';
@@ -87,11 +85,14 @@ font-family: 'Open Sans', sans-serif;
   flex-direction: row;
   justify-content: space-between;
   font-style: 'Open Sans Regular';
-  font-size: 1.25em;
   width: 340px;
   height: 60px;
+  padding-top: 8.3%;
 }
-
+.change__timetable__window-box__buttons button
+{
+	font-size:1.25em;
+}
 .change__timetable__window-box__buttons_cancel
 {
 	outline: 2px solid #5C56F6;
@@ -99,13 +100,14 @@ font-family: 'Open Sans', sans-serif;
   width: 160px;
   height: 60px;
   border-radius: 15px;
-  transition: background-color 0.1s linear; 
+  transition: background-color 0.1s linear;
+  color:#5C56F6; 
 }
 
-.change__timetable__window-box__buttons_cancel hover
+.change__timetable__window-box__buttons_cancel:hover
 {
   background-color: #5C56F6;
-  color: white;
+  color: #FFFFFF;
 }
 
 .change__timetable__window-box__buttons_complete 
@@ -119,7 +121,7 @@ font-family: 'Open Sans', sans-serif;
   border: none;
 }
 
-.change__timetable__window-box__buttons_complete hover
+.change__timetable__window-box__buttons_complete:hover
 {
   background-color: #FCC301;
 }
