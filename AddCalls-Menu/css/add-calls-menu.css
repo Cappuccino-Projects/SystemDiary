@@ -63,6 +63,7 @@ input[type=text] {
   height: 60px;
 }
 
+
 .add-calls-menu__individual-content__input textarea {
   border: none;
   border-bottom: 1px #9695AF solid;
@@ -81,6 +82,11 @@ input[type=text] {
   overflow: hidden;
 }
 
+/*Стиль для ошибки, инпут*/
+/* .add-calls-menu__individual-content__input textarea {
+border-bottom: 1px #FF2D20 solid;
+} */
+
 .add-calls-menu__individual-content__input textarea:focus {
   outline: none;
   border-bottom: 1px #5C56F6 solid;
@@ -91,6 +97,14 @@ input[type=text] {
   font-family: "Open Sans Regular";
   color: #9695AF;
 }
+
+/*Стиль для ошибки, текст*/
+/* .add-calls-menu__individual-content__input span {
+  font-size: 0.8125em;
+  font-family: "Open Sans Regular";
+  color: #FF2D20;
+} */
+
 
 .add-calls-menu__individual-content__input {
   margin-left: auto;
