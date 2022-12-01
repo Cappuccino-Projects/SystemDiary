@@ -1,13 +1,32 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-	<title>Document</title>
+	<link rel="stylesheet" href="css/delete-timetable-window.css">
+
+	<title>Всплывающее окно - Удалить расписание?</title>
 </head>
 <body>
-	
+	<div class="delete-timetable-view">
+	<div class="delete-timetable-window">
+		<div class="delete-timetable-window__content">
+			<!--start-flex-->
+			<div class="delete__timetable__window-box__title">
+				<div class="delete__timetable__window-box__title__icon"></div> 
+				<span class="delete__timetable__window-box__title__text">Удаление
+расписания</span>
+			</div> 
+		<!--end-flex-->
+				<div class="delete__timetable__window-box__textbox">
+					<span>Вы уверены, что хотите удалить расписание на этот день?</span>
+				</div>
+				<div class="delete__timetable__window-box__buttons"> 
+					<button class="delete__timetable__window-box__buttons__cancel" type="Button">Отмена</button>
+					<button class="delete__timetable__window-box__buttons__delete" type="Button">Удалить</button>
+					</div>
+				</div>
+		</div>
+		</div>
 </body>
 </html>
