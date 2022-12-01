@@ -69,9 +69,10 @@ input[type=text] {
 
 .add-calls-menu__common-content__day-of-week {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: auto;
   margin-bottom: auto;
+  border: black solid;
 }
 
 .add-calls-menu__common-content__day-of-week span {
