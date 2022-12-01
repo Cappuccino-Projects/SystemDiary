@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: white;
   display: flex;
   flex-position: row;
   justify-contnet: space-between;
@@ -21,6 +21,8 @@ input[type=text] {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  border: 1px #9695AF solid;
+  box-shadow: 0 5px 20px rgba(150, 149, 175, 0.8);
 }
 
 .add-calls-menu__line {
@@ -32,30 +34,85 @@ input[type=text] {
 }
 
 .add-calls-menu__common-content {
-  border: 1px red solid;
   width:237px;
-  height:309px;
+  height:330px;
   margin-top: 20px;
   margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
 
+.add-calls-menu__content__text {
+  font-size: 1em;
+  font-family: "Open Sans Regular";
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+}
+
+.add-calls-menu__content__text-main {
+  font-family: "Open Sans SemiBold";
+}
+
+.add-calls-menu__individual-content__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.add-calls-menu__individual-content__input textarea {
+  border: none;
+  border-bottom: 1px #9695AF solid;
+  background-color: none;
+  height: 90px;
+  font-size: 1em;
+  resize: none;
+  padding: 5px;
+  width: 220px;
+  height: 21px;
+  scrollbar-color: none;
+  font-size: 0.9375em;
+  font-family: "Open Sans Regular";
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.add-calls-menu__individual-content__input textarea:focus {
+  outline: none;
+  border-bottom: 1px #5C56F6 solid;
+}
+
+.add-calls-menu__individual-content__input span {
+  font-size: 0.8125em;
+  font-family: "Open Sans Regular";
+  color: #9695AF;
+}
+
+.add-calls-menu__individual-content__input {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .add-calls-menu__individual-content {
-  border: 1px blue solid;
   width:240px;
   height:300px;
   margin-top: 20px;
   margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.add-calls-menu__common-content__title {
+.add-calls-menu__content__title {
   font-size: 1.25em;
   font-family: "Open Sans SemiBold";
   text-align: center;
   margin-left: auto;
+  margin-right: auto;
 }
 
 .add-calls-menu__common-content__check-box {
@@ -72,7 +129,8 @@ input[type=text] {
   flex-direction: column;
   margin-top: auto;
   margin-bottom: auto;
-  border: black solid;
+  height: 262px;
+  justify-content: space-between;
 }
 
 .add-calls-menu__common-content__day-of-week span {
