@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+* {
+padding: 0;
+margin: 0;
+outline: none;
+box-sizing: border-box;
+font-family: 'Open Sans', sans-serif;
+}
+
+.change-timetable-view 
+{
+	width: 1000px;
+	height: 1000px;
+	background-color: black;
+}
+.change-timetable-window
+{
+	background-color: white;
+	width: 400px ;
+	height: 480px;
+	padding:1.8em;
+}
+
+.change-timetable-window-content
+{
+	text-align: center;
+	border-radius: 15px;
+	margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+.change__timetable__window-box__title
+{
+	display: flex;
+	width: 352px ;
+	height: 142px; 
+	flex-direction: row;
+	justify-content: space-between;
+}
+.change__timetable__window-box__title__icon 
+{
+	height: 145px;
+  width: 135px;
+	background: url(../image/change-timetable-window.png);
+	background-size: 100%;
+}
+
+.change__timetable__window-box__title__text
+{
+	width: 192px;
+	height: 93px;
+	font-family: 'Open Sans SemiBold';
+	font-size: 2.1em;
+	magrin-top:auto;
+	marhin-bottom:auto;
+}
+
+.change__timetable__window-box__textbox 
+{
+	font-size: 1.25em;
+	display: flex; 
+	width: 340px;
+	height: 160px;
+	font-style: 'Open Sans Regular';
+}
+
+.change__timetable__window-box__textbox span
+{
+
+}
+
+.change__timetable__window-box__textbox b
+{
+	font-style: 'Open Sans SemiBold';
+}
+
+.change__timetable__window-box__buttons 
+{
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-style: 'Open Sans Regular';
+  font-size: 1.25em;
+  width: 340px;
+  height: 60px;
+}
+
+.change__timetable__window-box__buttons_cancel
+{
+	outline: 2px solid #5C56F6;
+  outline-offset:-2px;
+  width: 160px;
+  height: 60px;
+  border-radius: 15px;
+  transition: background-color 0.1s linear; 
+}
+
+.change__timetable__window-box__buttons_cancel hover
+{
+  background-color: #5C56F6;
+  color: white;
+}
+
+.change__timetable__window-box__buttons_complete 
+{
+  background-color: #FEE17B;
+  width: 160px;
+  height: 60px;
+  border-radius: 15px;
+  transition: background-color 0.1s linear;
+  color: #B7681E;
+  border: none;
+}
+
+.change__timetable__window-box__buttons_complete hover
+{
+  background-color: #FCC301;
+}
+
+
+
+
+
+
