@@ -43,7 +43,7 @@ font-family: 'Open Sans', sans-serif;
 }
 .change__timetable__window-box__title__icon 
 {
-	height: 145px;
+	height: 135px;
   width: 135px;
 	background: url(../image/change-timetable-window.png);
 	background-size: 100%;
@@ -53,10 +53,13 @@ font-family: 'Open Sans', sans-serif;
 {
 	width: 192px;
 	height: 93px;
-	font-family: 'Open Sans SemiBold';
+	font-family: "Open Sans SemiBold";
 	font-size: 2.1em;
 	magrin-top:auto;
 	marhin-bottom:auto;
+}
+.change__timetable__window-box__title__text span
+{		
 }
 
 .change__timetable__window-box__textbox 
