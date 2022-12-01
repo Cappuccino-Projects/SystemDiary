@@ -1,0 +1,219 @@
+body {
+  background-color: grey;
+  display: flex;
+  flex-position: row;
+  justify-contnet: space-between;
+  
+}
+
+input[type=text] {
+  outline: none;
+  text-align: center;
+  font-size: 1.25em;
+  font-family: "Open Sans Regular";
+}
+
+.add-calls__main-timetable {
+  background-color: white;
+  width: 430px;
+  height: 680px;
+  border-radius: 15px;
+}
+
+.add-calls__add-config-timetable {
+  background-color: #F9FAFF;
+  width: 430px;
+  height: 680px;
+  border-radius: 15px;
+  display: flex;
+  text-align: center;
+  color: #9695AF;
+  cursor: pointer;
+}
+
+.add-calls__add-config-timetable span {
+  font-size: 1.25em;
+  font-family: "Open Sans Regular";
+  text-align: center;
+  margin: auto;
+  transition: font-size 0.3s ease-in-out,
+  color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.add-calls__add-config-timetable:hover {
+  background-color: white;
+  color: #5C56F6;
+  font-size: 1.05em;
+}
+
+.add-calls__main-timetable__content {
+  width: 390px;
+  height: 633px;
+  margin-top: 33px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-calls__main-timetable__content__lessons__lesson-add {
+  width: 390px;
+  height: 24px;
+  display: flex;
+  fle-direction: row;
+  justify-content: space-between;
+}
+
+.add-calls__main-timetable__content__lessons {
+  width: 390px;
+  height: 584px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-calls__main-timetable__content__lessons__lesson-add__num-lesson {
+  font-family: "Open Sans Regular";
+  color: black;
+  font-size: 1.25em;
+}
+
+.add-calls__main-timetable__content__lessons__lesson-add__time-input {
+  border: none;
+  border-bottom: 1px #9695AF solid;
+  width: 140px;
+}
+
+.add-calls__main-timetable__content__lessons__lesson-add__time-input:focus {
+  border-bottom: 1px #5C56F6 solid;
+}
+
+.add-calls__main-timetable__content__buttons {
+  width: 390px;
+  height: 25px;
+  display: flex;
+  flex-position: row;
+  justify-content: space-between;
+}
+
+.add-calls__main-timetable__content__buttons__5-minutes {
+  height: 25px;
+  width: 130px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: right;
+  top: auto;
+  font-size: 1em;
+  font-family: "Open Sans Regular";
+  color: #9695AF;
+  text-align: right;
+  cursor: pointer;
+}
+
+.add-calls__main-timetable__content__buttons__no-lessons {
+  height: 25px;
+  width: 127px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: right;
+  top: auto;
+  font-size: 1em;
+  font-family: "Open Sans Regular";
+  color: #9695AF;
+  text-align: right;
+  cursor: pointer;
+}
+
+.add-calls__main-timetable__content__buttons__delete {
+  height: 25px;
+  width: 85px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: right;
+  top: auto;
+  font-size: 1em;
+  font-family: "Open Sans Regular";
+  color: #9695AF;
+  text-align: right;
+  cursor: pointer;
+}
+
+.fi {
+  margin-top: auto;
+}
+
+.add-calls__main-timetable__content__buttons__5-minutes:hover {
+  color: #1D017C;
+}
+
+.add-calls__main-timetable__content__buttons__no-lessons:hover {
+  color: #1D017C;
+}
+
+.add-calls__main-timetable__content__buttons__delete:hover {
+  color: #FF6258;
+}
+
+.add-calls__main-timetable__content__buttons__5-minutes:active {
+  color: #5C56F6;
+}
+
+.add-calls__main-timetable__content__buttons__no-lessons:active {
+  color: #5C56F6;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons {
+  width: 300px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: center;
+  font-size: 1.25em;
+  font-family: "Open Sans Regular";
+  margin: auto;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons__no-lessons-text {
+     width:300px;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons__input-box {
+  width: 300px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons__input-box textarea {
+  border: 1px #9695AF solid;
+  border-radius: 10px;
+  background-color: none;
+  height: 90px;
+  font-size: 1em;
+  resize: none;
+  padding: 5px;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons__input-box span {
+  text-align: center;
+  font-size: 0.8em;
+  font-family: "Open Sans Regular";
+  color: #9695AF;
+}
+
+.add-calls__main-timetable__content__reason-of-no-lessons__input-box textarea:focus {
+  outline: none;
+  border: 1px #5C56F6 solid;
+}
