@@ -45,7 +45,7 @@ font-family: 'Open Sans', sans-serif;
 {
 	height: 145px;
   width: 135px;
-	background: url(../image/change-timetable-window.png);
+	background: url(../image/change-timetable-window-icon.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	margin-right:8%;
@@ -110,7 +110,7 @@ font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
 }
 
-.change__timetable__window-box__buttons_complete 
+.change__timetable__window-box__buttons_continue 
 {
   background-color: #FEE17B;
   width: 160px;
@@ -121,7 +121,7 @@ font-family: 'Open Sans', sans-serif;
   border: none;
 }
 
-.change__timetable__window-box__buttons_complete:hover
+.change__timetable__window-box__buttons_continue:hover
 {
   background-color: #FCC301;
 }
