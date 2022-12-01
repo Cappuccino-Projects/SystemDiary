@@ -37,6 +37,10 @@ input[type=text] {
   height:309px;
   margin-top: 20px;
   margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .add-calls-menu__individual-content {
@@ -53,3 +57,73 @@ input[type=text] {
   text-align: center;
   margin-left: auto;
 }
+
+.add-calls-menu__common-content__check-box {
+  height: 20px;
+  width:20px;
+  border: 1px black solid;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.add-calls-menu__common-content__day-of-week {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.add-calls-menu__common-content__day-of-week span {
+  font-size: 1.25em;
+  font-family: "Open Sans Regular";
+  margin-bottom: auto;
+}
+
+/*####################*/
+.custom-checkbox {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.custom-checkbox-icon {
+  font-family: "Open Sans Regular";
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+span.custom-checkbox-icon::selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-selct: none;
+  background-color: transparent;
+  font-family: "Open Sans Regular";
+  font-size: 1.25em;
+}
+
+.custom-checkbox input[type=checkbox] {
+  display: none;
+}
+
+.custom-checkbox-icon {
+  font-size: 1.25em;
+}
+
+span.custom-checkbox-icon::before {
+  font-family: 'SystemDiary' !important;
+  content: "\ecd0";
+  margin-right: 10px;
+  margin-top: auto;
+  #9695AF
+}
+
+input[type=checkbox]:checked + span.custom-checkbox-icon::before {
+  font-family: 'SystemDiary' !important;
+  content: "\ea12";
+  margin-right: 10px;
+  margin-top: auto;
+  color: #5C56F6;
+}
+
+/*####################*/
