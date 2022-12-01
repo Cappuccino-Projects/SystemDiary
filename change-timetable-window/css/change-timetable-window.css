@@ -8,12 +8,6 @@ box-sizing: border-box;
 font-family: 'Open Sans', sans-serif;
 }
 
-.change-timetable-view 
-{
-	width: auto;
-	height: 697px;
-	background-color: black;
-}
 .change-timetable-window
 {
 	background-color: white;

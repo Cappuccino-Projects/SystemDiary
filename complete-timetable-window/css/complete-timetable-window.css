@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 * {padding: 0;margin: 0;outline: none;box-sizing: border-box;font-family: 'Open Sans', sans-serif;}
 
-.complete-timetable-view 
-{
-	width: auto;
-	height: 697px;
-	background-color: black;
-}
 .complete-timetable-window
 {
 	background-color: white;
@@ -38,7 +32,7 @@
 .complete__timetable__window-box__title__icon 
 {
   width: 100%;
-  height: 100%;
+  height: 105%;
 	background: url(../image/complete-timetable-window-icon.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
