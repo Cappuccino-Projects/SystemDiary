@@ -1,0 +1,41 @@
+body {
+  background-color: grey;
+  display: flex;
+  flex-position: row;
+  justify-contnet: space-between;
+  font-size: 48px!important;
+  font-family: "Open Sans";
+  
+}
+
+.add-timetable__navigation {
+  border: 3px black solid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.add-timetable__navigation__kurs {
+  max-width: 94.375rem;
+  max-height: 4.438rem;
+  display: flex;
+  flex-direction: row;
+  border: 1px red solid;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0.625rem;
+}
+
+.kurs__block {
+  border-radius: 10px;
+  max-height: 20px;
+  max-width: 170px;
+  background-color: orange;
+  flex: 1 1 auto;
+  margin: 0 5px;
+}
+
+.kurs__block span {
+   font-size: 0.41em;
+   width: 60px;
+}
