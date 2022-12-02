@@ -49,6 +49,8 @@ body
 	border-style: dashed solid;
 	border-width: 5px;
 	border-radius: 15px;
+	display: flex;
+  flex-direction: column;
 
 }
 #middleblock
