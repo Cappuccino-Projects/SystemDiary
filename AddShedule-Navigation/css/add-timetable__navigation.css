@@ -1,41 +1,151 @@
 body {
   background-color: grey;
-  display: flex;
-  flex-position: row;
-  justify-contnet: space-between;
   font-size: 48px!important;
   font-family: "Open Sans";
-  
 }
 
 .add-timetable__navigation {
+  max-width: 1510px;
   border: 3px black solid;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .add-timetable__navigation__kurs {
-  max-width: 94.375rem;
-  max-height: 4.438rem;
+  max-width: 1510px;
+  max-height: calc(60px*2 + 20px);
+  width: calc(4*170px + 3*20px);
   display: flex;
   flex-direction: row;
   border: 1px red solid;
   justify-content: space-between;
-  background-color: white;
-  border-radius: 0.625rem;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .kurs__block {
   border-radius: 10px;
-  max-height: 20px;
+  min-height: 60px;
   max-width: 170px;
-  background-color: orange;
-  flex: 1 1 auto;
-  margin: 0 5px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .kurs__block span {
    font-size: 0.41em;
-   width: 60px;
+   align-items: center;
 }
+
+@media screen and (max-width: 760px) {
+  .add-timetable__navigation__kurs {
+    width: calc(3*170px + 2*20px);
+    height: calc(2*60 + 20px);
+  }
+
+  .kurs__block {
+    margin-bottom: 20px;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .add-timetable__navigation__kurs {
+    width: calc(2*170px + 1*20px);
+    height: calc(3*60 + 20px);
+  }
+
+  .kurs__block {
+    margin-bottom: 20px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .add-timetable__navigation__kurs {
+    width: calc(170px);
+    max-height: calc(60px*4 + 3*20px);
+  }
+
+  .kurs__block {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+/* КОНЕЦ СТИЛЕЙ КУРСА */
+
+.add-timetable__navigation__faculty {
+  max-width: 1510px;
+  max-height: calc(60px*2 + 20px);
+  width: calc(4*170px + 3*20px);
+  display: flex;
+  flex-direction: row;
+  border: 1px red solid;
+  justify-content: space-between;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.faculty__block {
+  border-radius: 10px;
+  max-height: 130px;
+  min-height: 100px;
+  min-width: 170px;
+  max-width: 500px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faculty__block span {
+   font-size: 0.41em;
+   align-items: center;
+}
+
+/* @media screen and (max-width: 760px) {
+  .add-timetable__navigation__faculty {
+    width: calc(3*170px + 2*20px);
+    height: calc(2*60 + 20px);
+  }
+
+  .faculty__block {
+    margin-bottom: 20px;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .add-timetable__navigation__faculty {
+    width: calc(2*170px + 1*20px);
+    height: calc(3*60 + 20px);
+  }
+
+  .faculty__block {
+    margin-bottom: 20px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .add-timetable__navigation__faculty {
+    width: calc(170px);
+    max-height: calc(60px*4 + 3*20px);
+  }
+
+  .faculty__block {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+} */
