@@ -10,17 +10,46 @@
 <body>
 	<div class="general-page-timetable">
 		<div class="general-timetable__content">
-			<!--Верхняя flex строка-->
-			<div class="general-timetable__view"></div>
-			<div class="general-timetable__input-change"></div>
-			<div class="general-timetable__edit"></div>
-			<div class="general-timetable__bell"></div>
-
+			<!--Верхняя flex строка--> <div class="general-timetable_higth-row">
+				<!--Блок.Просмотр общего расписания-->
+			<div id="block" class="general-timetable__view"> 
+				<div class="general-timetable__view__title"><span>Просмотр общего расписания</span></div>
+			<div id="icon" class="general-timetable__view__icon"></div>
+				</div>
+			<!--Блок. Внесение изменений-->
+			<div id="block" class="general-timetable__input-change">
+				<div class="general-timetable__input__title"><span>Внесение изменений</span></div>
+				<div id="icon" class="general-timetable__input__icon"></div>
+			</div>
+			<!--Блок. На какие дни будут изменения-->
+			<div id="bigblock"class="general-timetable__change-time-box">
+				<span>Изменения назначены на:</span>
+			</div>
+		</div>
 			<!--Нижняя flex строка-->
-			<div class="general-timetable__excel-output-timetable"></div>
-			<div class="general-timetable__excel-output-change-timetable"></div>
-			<div class="general-timetable__excel-change-timetable"></div>
+			<div class="general-timetable_low-row">
+			<!--Блок.Вывод расписания в Excel-->
+			<div id="block" class="general-timetable__excel-output">
+						<div class="general-timetable__excel-output__title"><span>Вывод общего расписания и звонков в Excel</span></div>
+						<div id="icon" class="general-timetable__excel-output__icon"></div>
+			</div>
+			<!--Блок.Вывод изменений в Excel-->
+			<div id="block"class="general-timetable__excel-change">
+						<div  class="general-timetable__excel-change__title"><span>Вывод общего расписания и звонков в Excel</span></div>
+						<div id="icon" class="general-timetable__excel-change__icon"></div></div>
+			<!--Разделение на flex столбец-->
+			<div id="bigblock"class="general-timetable__edit">
+				<div id="middleblock" class="general-timetable__edit-window">
+					<div class="general-timetable__edit-window__title"></div>
+					<div id="icon" class="general-timetable__edit-window__icon"></div>
+				</div>
+				<div id="middle block" class="general-timetable__bell-window">
+						<div class="general-timetable__bell-window__title"></div>
+					<div id="icon" class="general-timetable__bell-window__icon"></div>
+				</div>
+			</div>	
 		</div>
 		</div>
+	</div>
 </body>
 </html>
