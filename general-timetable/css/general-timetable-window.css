@@ -14,11 +14,14 @@ body
 }
 
 .general-page-timetable
-{	flex-wrap: wrap;
+{	
+	lex-wrap: wrap;
 	background-color: white;
-	max-width: 31.458rem;
+	max-width: 1510px;
+	display: flex;
+  flex-direction: column;
 	width:100%;
-	max-height: 17.917rem;
+	max-height: 865px;
 	height: 100%;
 	border: 2px red;
 	/*padding:2%*/
