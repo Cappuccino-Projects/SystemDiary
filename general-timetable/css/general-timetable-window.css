@@ -10,68 +10,69 @@ font-family: 'Open Sans', sans-serif;
 
 body
 {
-	font-size:48px!important;
-	font-family: "Open Sans Regular";
+	font-size:48px;
+	font-style: "Open Sans Regular";
 
-}
-
-.general-page-timetable
-{
-	background-color: white;
-	max-width: 1510px;
-	width:100%;
-	max-height: 865px;
-	height: 100%;
-	font-size: 0.667em;
-	/* padding:2%; */
-	color:#9695AF;
 }
 
 .general-timetable__content
 {
-	margin-left: auto;
-  margin-right: auto;
   background-color: #FFFFFF;
-}
-.general-timetable_higth-row
-{
-	flex-wrap: wrap;
-	display: flex;
-	flex-direction: row;
-	max-width: 1510px;
-	max-height: 420px;
+  max-width: 1510px;
+  width:100%;
+  max-height: 865px;
+  height: 100%;
+  font-size: 0.667em;
+  color:#9695AF;
+  flex-flow: row wrap;
+  display: flex;
 }
 
-#block
+/*.general-timetable_higth-row
 {
-	width: 420px;	
+	display: flex;
+	max-width: 1510px;
+	max-height: 420px;
+  flex-direction: row;
+}
+*/
+
+
+.block
+{
+	width: 420px;
 	height: 420px;
 	border-style: dashed solid;
 	border-width: 5px;
 	border-radius: 15px;
 	display: flex;
-  flex-direction: column;
-
+	flex-direction:column;
+	justify-content: space-around;
+	text-align: center;
+	margin: 0;
+	align-items: center;
 }
-#middleblock
+
+.middleblock
 {
 	width: 630px;	
 	height: 200px;
 	border-radius: 15px;
 }
 
-#bigblock
+.bigblock
 {
 	width: 630px;	
 	height: 420px;
 }
 
-#icon
+.icon
 {
 	width: 160px;	
 	height: 142px;
-	background-size: 110%;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat!important;
+	background-position: center center!important;
+	background-size: cover!important;
 }
 
 .general-timetable__view__icon
@@ -82,15 +83,6 @@ body
 .general-timetable__input__icon
 {
 	background: url(../image/general-timetable-input-change-timetable-icon.png);
-}
-
-.general-timetable_low-row
-{
-	flex-wrap: wrap;
-	display: flex;
-	flex-direction: row;
-	max-width: 1510px;
-	max-height: 420px;
 }
 
 .general-timetable__excel-output__icon
@@ -112,7 +104,7 @@ body
 	background: url(../image/general-timetable-bell-icon.png);	
 }
 
-.general-timetable__edit
+/*.general-timetable__edit
 {
 	width: calc(2*630px + 20px*4);
 }
@@ -123,7 +115,8 @@ body
 {
 	width:70%;
 }
-}
+*/
+
 
 
 
