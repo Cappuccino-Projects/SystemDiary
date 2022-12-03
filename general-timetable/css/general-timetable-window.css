@@ -1,115 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 * {
-padding: 0;
-margin: 0;
-outline: none;
-box-sizing: border-box;
-font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-body
-{
-	font-size:48px;
-	font-style: "Open Sans Regular";
-
+body {
+  background-color: #F3F4F8;
+  font-size: 48px;
+  font-style: "Open Sans Regular";
 }
 
-.general-timetable__content
-{
-  background-color: #FFFFFF;
+.timetable__content {
+  background-color: transparent;
   max-width: 1510px;
-  width:100%;
+  width: 100%;
   max-height: 865px;
   height: 100%;
   font-size: 0.667em;
-  color:#9695AF;
+  color: #9695af;
   flex-flow: row wrap;
   display: flex;
+  gap: 20px;
 }
 
-.block
-{
-	width: 420px;
-	height: 420px;
-	border-style: dashed solid;
-	border-width: 5px;
-	display: flex;
-	flex-direction:column;
-	justify-content: space-around;
-	text-align: center;
-	align-items: center;
+.block {
+  width: 420px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
 }
 
-.middleblock
-{
-	width: 630px;	
-	height: 200px;
+.middleblock {
+  width: 630px;
+  height: 200px;
 }
 
-.bigblock
-{
-	width: 630px;	
-	height: 420px;
+.bigblock {
+  width: 630px;
+  height: 420px;
 }
 
-.block,.middleblock,.bigblock{
-	border-radius: 15px;
-}
-.icon
-{
-	width: 160px;	
-	height: 142px;
-	background-repeat: no-repeat!important;
-	background-position: center center!important;
-	background-size: cover!important;
-}
+.timetable__edit{
+  /* border-radius: 1px; */
+  gap:20px;
 
-.general-timetable__view__icon
-{
-	background: url(../image/general-timetable-view-timetable-icon.png);
+}
+.block,
+.middleblock,
+.bigblock {
+  border-radius: 15px;
+  border-width: 5px;
+  background-color: #FFF;
 }
 
-.general-timetable__input__icon
-{
-	background: url(../image/general-timetable-input-change-timetable-icon.png);
+.icon {
+  width: 160px;
+  height: 142px;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: contain !important;
 }
 
-.general-timetable__excel-output__icon
-{
-	background: url(../image/general-timetable-excel-output-timetable-icon.png);
-}		
 
-.general-timetable__excel-change__icon
-{
-	background: url(../image/general-timetable-input-change-timetable-icon.png);
-}	
-
-.general-timetable__edit-window__icon
-{
-	background: url(../image/general-timetable-edit-timetable-icon.png);
-}
-.general-timetable__bell-window__icon
-{
-	background: url(../image/general-timetable-bell-icon.png);	
+.timetable__view__icon {
+  background: url(../image/general-timetable-view-timetable-icon.png);
 }
 
-/*.general-timetable__edit
-{
+.timetable__input__icon {
+  background: url(../image/general-timetable-input-change-timetable-icon.png);
+}
+
+.timetable__excel-output__icon {
+  background: url(../image/general-timetable-excel-output-timetable-icon.png);
+}
+
+.timetable__excel-change__icon {
+  background: url(../image/general-timetable-excel-output-change-icon.png);
+}
+
+.timetable__edit-window__icon {
+  background: url(../image/general-timetable-edit-timetable-icon.png);
+}
+.timetable__bell-window__icon {
+  background: url(../image/general-timetable-bell-icon.png);
+}
+
+/*.timetable__edit {
 	width: calc(2*630px + 20px*4);
 }
 
-@media screen and (max-width 1510px)
-{
-.general-timetable_higth-row
-{
+@media screen and (max-width 1510px) {
+.timetable_higth-row {
 	width:70%;
 }
 */
-
-
-
-
-
-
-

@@ -1,53 +1,63 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/general-timetable-window.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general-timetable-window.css" />
 
-	<title>Расписание. Основная страница. </title>
-</head>
-<body>
-	<div class="general-page-timetable">
-		<div class="general-timetable__content">
-			<!--Верхняя flex строка--> 
-				<!--Блок.Просмотр общего расписания-->
-			<div class="general-timetable__view block" > 
-				<div class="general-timetable__view__title"><span>Просмотр общего расписания</span></div>
-			<div class="general-timetable__view__icon icon"></div>
-				</div>
-			<!--Блок. Внесение изменений-->
-			<div class="general-timetable__input-change block">
-				<div class="general-timetable__input__title"><span>Внесение изменений</span></div>
-				<div class="general-timetable__input__icon icon"></div>
-			</div>
-			<!--Блок. На какие дни будут изменения-->
-			<div class="general-timetable__change-time-box bigblock">
-				<span>Изменения назначены на:</span>
-			</div>
-			<!--Нижняя flex строка-->
-			<!--Блок.Вывод расписания в Excel-->
-			<div class="general-timetable__excel-output block">
-						<div class="general-timetable__excel-output__title"><span>Вывод общего расписания и звонков в Excel</span></div>
-						<div class="general-timetable__excel-output__icon icon"></div>
-			</div>
-			<!--Блок.Вывод изменений в Excel-->
-			<div class="general-timetable__excel-change block">
-						<div  class="general-timetable__excel-change__title"><span>Вывод изменений
-в Excel</span></div>
-						<div class="general-timetable__excel-change__icon icon"></div></div>
-			<!--Разделение на flex столбец-->
-			<div class="general-timetable__edit bigblock">
-				<div class="general-timetable__edit-window middleblock">
-					<div class="general-timetable__edit-window__title"></div>
-					<div class="general-timetable__edit-window__icon icon"></div>
-				</div>
-				<div class="general-timetable__bell-window middleblock">
-						<div class="general-timetable__bell-window__title"></div>
-					<div class="general-timetable__bell-window__icon icon"></div>
-				</div>
-			</div>	
-		</div>
-	</div>
-</body>
+    <title>Расписание. Основная страница.</title>
+  </head>
+  <body>
+    <div class="page-timetable">
+      <div class="timetable__content">
+        <!--Верхняя flex строка-->
+          <!--Блок.Просмотр общего расписания-->
+            <div class="timetable__view block">
+              <div class="timetable__view__title">
+                <span>Просмотр общего расписания</span>
+              </div>
+              <div class="timetable__view__icon icon"></div>
+            </div>
+          <!--Блок. Внесение изменений-->
+            <div class="timetable__input-change block">
+              <div class="timetable__input__title">
+                <span>Внесение изменений</span>
+              </div>
+              <div class="timetable__input__icon icon"></div>
+            </div>
+          <!--Блок. На какие дни будут изменения-->
+            <div class="timetable__change-time-box bigblock">
+              <span>Изменения назначены на:</span>
+            </div>
+        <!--Нижняя flex строка-->
+          <!--Блок.Вывод расписания в Excel-->
+            <div class="timetable__excel-output block">
+              <div class="timetable__excel-output__title">
+                <span>Вывод общего расписания и звонков в Excel</span>
+              </div>
+              <div class="timetable__excel-output__icon icon"></div>
+            </div>
+          <!--Блок.Вывод изменений в Excel-->
+            <div class="timetable__excel-change block">
+              <div class="timetable__excel-change__title">
+                <span>Вывод изменений в Excel</span>
+              </div>
+              <div class="timetable__excel-change__icon icon"></div>
+            </div>
+          <!--Разделение на flex столбец-->
+            <div class="timetable__edit bigblock">
+              <div class="timetable__edit-window middleblock">
+                <div class="timetable__edit-window__title">
+                  <span>Редактирование общего расписания</span>
+                </div>
+                <div class="timetable__edit-window__icon icon"></div>
+              </div>
+              <div class="timetable__bell-window middleblock">
+                <div class="timetable__bell-window__title"><span>Редактирование расписания звонков</span></div>
+                <div class="timetable__bell-window__icon icon"></div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </body>
 </html>
