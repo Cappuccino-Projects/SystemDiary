@@ -28,28 +28,16 @@ body
   display: flex;
 }
 
-/*.general-timetable_higth-row
-{
-	display: flex;
-	max-width: 1510px;
-	max-height: 420px;
-  flex-direction: row;
-}
-*/
-
-
 .block
 {
 	width: 420px;
 	height: 420px;
 	border-style: dashed solid;
 	border-width: 5px;
-	border-radius: 15px;
 	display: flex;
 	flex-direction:column;
 	justify-content: space-around;
 	text-align: center;
-	margin: 0;
 	align-items: center;
 }
 
@@ -57,7 +45,6 @@ body
 {
 	width: 630px;	
 	height: 200px;
-	border-radius: 15px;
 }
 
 .bigblock
@@ -66,6 +53,9 @@ body
 	height: 420px;
 }
 
+.block,.middleblock,.bigblock{
+	border-radius: 15px;
+}
 .icon
 {
 	width: 160px;	
