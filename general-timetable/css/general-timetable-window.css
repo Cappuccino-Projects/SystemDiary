@@ -11,20 +11,21 @@
 body {
   background-color: #F3F4F8;
   font-size: 48px;
-  font-style: "Open Sans Regular";
 }
 
 .timetable__content {
   background-color: transparent;
   max-width: 1510px;
   width: 100%;
-  max-height: 865px;
+  /* max-height: 865px; */
   height: 100%;
-  font-size: 0.667em;
   color: #9695af;
   flex-flow: row wrap;
   display: flex;
   gap: 20px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .block {
@@ -32,32 +33,66 @@ body {
   height: 420px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   align-items: center;
+  padding: 60px 60px 40px 60px;
 }
 
 .middleblock {
   width: 630px;
   height: 200px;
+  display: flex;
+  align-items: center;
+  padding:50px 40px 50px 40px ;
 }
 
 .bigblock {
   width: 630px;
   height: 420px;
+  padding: 40px 40px 50px 40px;
 }
 
-.timetable__edit{
-  /* border-radius: 1px; */
-  gap:20px;
-
-}
 .block,
 .middleblock,
 .bigblock {
   border-radius: 15px;
   border-width: 5px;
   background-color: #FFF;
+}
+
+.title {
+  font-size: 0.67em;
+}
+
+.day {
+  font-size:0.42em;
+}
+
+.groups {
+  color: #B7681E;
+  font-size: 0.3em;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 13px;
+  margin-bottom: 20px;
+}
+
+.group{
+  background-color: #FFC500;
+  border-radius: 100px;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.timetable__edit-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .icon {
@@ -67,6 +102,14 @@ body {
   background-position: center center !important;
   background-size: contain !important;
 }
+
+.block:hover,
+.middleblock:hover{
+  color:#FFF;
+  background-color: #5C56F6;
+  cursor: pointer;
+}
+
 
 
 .timetable__view__icon {
@@ -99,5 +142,18 @@ body {
 @media screen and (max-width 1510px) {
 .timetable_higth-row {
 	width:70%;
+}
+
+
+@media screen and (max-width: 760px) {
+  .add-timetable__navigation__kurs {
+    width: calc(3*170px + 2*20px);
+    height: calc(2*60 + 20px);
+  }
+
+  .kurs__block {
+    margin-bottom: 20px;
+    width: 70%;
+  }
 }
 */
