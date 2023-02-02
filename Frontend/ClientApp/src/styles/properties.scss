@@ -1,0 +1,70 @@
+/*
+ *  Container
+ */
+
+$container-width: 96%;
+$container-min-width: 310px;
+
+/*
+ *  Menu
+ */
+
+$menu-width: 13.2%;
+$menu-min-width: 240px;
+$menu-item-padding-vertical: 15px;
+$menu-item-padding-left: 20px;
+$margin-inner: calc((100% - $container-width) * ($container-width / ($menu-width * 2)) - $menu-item-padding-left);
+
+/*
+ *  Header
+ */
+
+$header-height: 100px;
+$header-inner-height: calc($header-height / 1.5);
+
+/*
+ *  Content
+ */ 
+
+$content-width: calc($container-width - $menu-width);
+$content-margin-top: calc(50px + $header-height);
+$content-margin-left: calc(((100% - $container-width) / 2) + $menu-width);
+$content-margin-min-left: calc(((100% - $container-width) / 2) + $menu-min-width);
+$content-margin: $content-margin-top 0 0 $content-margin-left;
+$content-margin-min: $content-margin-top 0 0 $content-margin-min-left;
+
+/*
+ *  ProfileNav
+ */
+
+$profile-nav-width: 369px;
+$profile-height: 60px;
+
+/*
+ *  HotTaskCard
+ */
+
+$hot-task-card-width: 100%;
+$hot-task-card-height: auto;
+$hot-task-card-margin-top: 20px;
+$hot-task-card-margin-bottom: 20px;
+
+/*
+ *  Pages
+ */
+
+$page-margin-top: 20px;
+
+/*
+ *  FONTS
+ */
+
+$font-margin-top: 0px;
+$font-margin-bottom: 0px; 
+
+/*
+ *  CALENDAR
+ */
+
+ $calendar-head-item-width: 120px;
+ $calendar-week-margin-top: 8px;

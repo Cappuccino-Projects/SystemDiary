@@ -1,0 +1,239 @@
+/*
+    Псевдокласс для переменных
+*/
+:root {
+    --timetable-header-background-color: #5C56F6;
+    --timetable-header-text-color: #fff;
+    --timetable-body-background-color: #fff;
+    --timetable-weekbutton-text-checked: #fff;
+    --timetable-weekbutton-text-unchecked: #5C56F6;
+    --timetable-body-lesson-textcolor-grey: #9695AF;
+    --timetable-header-background-color-editing: #FF6258;
+    --timetable-body-background-lesson-hover: #E3E3F9;
+}
+
+.timetable{
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    Класс компонента Header, стиль шапки.
+*/
+.timetable-header{
+    max-width: 510px;
+    min-width: 368px;
+    height: 80px;
+    background-color: var(--timetable-header-background-color);
+    border-radius: 15px;
+    font-size: 0.5em;
+    color: var(--timetable-header-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.timetable-header__editing{
+    background-color: var(--timetable-header-background-color-editing);
+}
+.timetable-body__editing{
+    border: 2px solid var(--timetable-header-background-color-editing);
+}
+
+/*
+    Класс компонента Body, стиль тела.
+*/
+.timetable-body{
+    max-width: 510px;
+    min-width: 368px;
+    height: 580px;
+    border-radius: 15px;
+    background-color: var(--timetable-body-background-color);
+    margin-top: 20px;
+}
+
+.timetable-body-week{
+    width: 455px;
+    height: 380px;
+    border-radius: 15px;
+    background-color: var(--timetable-body-background-color);
+    margin-top: 20px;
+
+    font-size: 0.85em;
+}
+
+.timetable-body_container{
+    padding-top: 20px;
+}
+
+.styleSelfTraningDay{
+    position: relative;
+    padding-top: 6rem;
+    font-size: 3.7rem;
+    color:#9695AF;
+}
+
+.timetable-body__lesson{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 30px;
+}
+
+.timetable-body__lesson:hover{
+    background-color: var(--timetable-body-background-lesson-hover);
+}
+
+.timetable-body__lesson__container{
+    margin-left: auto;
+    max-width: 100%;
+    text-align: right;
+    color: var(--timetable-body-lesson-textcolor-grey)
+}
+
+.timetable-body__lesson__calls{
+    width: 5rem;
+    font-size: 0.27em;
+    color: var(--timetable-body-lesson-textcolor-grey)
+}
+
+.timetable-body__lesson-container-calls{
+    display: flex;
+    align-items: center;
+
+    width: 30%;
+}
+.timetable-body__lesson-container-subject{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 40%;
+    max-width: 230px;
+}
+.timetable-body__lesson-container-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.timetable-body__lesson__subject{
+    text-align: center;
+
+}
+
+.timetable-body__lesson__subject,
+.timetable-body__lesson__teacher,
+.timetable-body__lesson__cabinet{
+    font-size: 0.32em;
+    line-height: 18px;
+}
+
+.timetable-body-calls{
+    min-height: 70px;
+    padding: 0 30px;
+    font-size: 0.41em;
+}
+
+.flexcontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.timetable-body-calls__couple{
+    min-height: 70px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timetable-body-calls__time{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tablist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.7rem 3rem;
+}
+
+.tabhead{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+
+    margin: 0.7rem;
+    font-size: 0.35em;
+    color: var(--timetable-body-lesson-textcolor-grey);
+    text-decoration: underline;
+}
+
+.tabhead:hover{
+    color: var(--timetable-header-background-color);
+    text-decoration: underline;
+    cursor: pointer;  
+}
+
+.tablistWeek{
+    display: flex;
+    flex-direction: row;
+}
+.tabheadWeek{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+
+    width: 170px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 40px 30px 30px 0;
+    border-radius: 10px;
+    font-size: 0.41em;
+    cursor: pointer;
+}
+
+.tabWeekCheked{
+    background-color: var(--timetable-weekbutton-text-unchecked);
+    color: var(--timetable-weekbutton-text-checked)
+}
+
+.week{
+    width: 100%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: calc(470px * 3 + 2* 3.5rem);
+    gap: 3.5rem;
+}
+
+@media screen and (max-width: 1440px){
+    .timetable-body__lesson__calls {
+        width: 4rem;
+        width: 75%;
+        font-size: 0.35em;
+        color: var(--timetable-body-lesson-textcolor-grey);
+    }
+
+    .timetable-body__lesson__subject,
+    .timetable-body__lesson__teacher,
+    .timetable-body__lesson__cabinet{
+    font-size: 0.4em;
+    }
+}

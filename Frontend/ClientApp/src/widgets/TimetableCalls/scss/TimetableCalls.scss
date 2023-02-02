@@ -1,0 +1,101 @@
+.add-calls__add-config-timetable {
+  background-color: #F9FAFF;
+  width: 430px;
+  height: 680px;
+  border-radius: 15px;
+  display: flex;
+  text-align: center;
+  color: #9695AF;
+  cursor: pointer;
+  margin-top: 75px;
+}
+
+.add-calls__add-config-timetable span {
+  font-size: 0.41em;
+  text-align: center;
+  margin: auto;
+  transition: font-size 0.3s ease-in-out,
+  color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.add-calls__add-config-timetable:hover {
+  background-color: white;
+  color: #5C56F6;
+  font-size: 1.05em;
+}
+
+//////////////////////////////////////////////
+
+.card-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card-container{
+  margin: 1rem;
+}
+
+.card-header{
+  width: 430px;
+  height: 50px;
+  background-color: #5C56F6;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card-header span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+  font-size: 0.5em;
+  color: #fff;
+}
+
+.card-body{
+  width: 430px;
+  height: 680px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.card-body__field{
+  font-size: 0.41em;
+  padding: 21px;
+}
+
+.card-body__field input{
+  width: 8.6rem;
+  height: 1.2rem;
+  font-family: inherit;
+  font-size: 1em;
+  text-align: center;
+  
+  border: none;
+  border-bottom: 1px solid #9695AF;
+
+  margin-left: 10px;
+}
+
+.card-body__button{
+  margin: 0 40px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.35em;
+
+  color: #9695AF;
+}
+
+@media (width < 1600px){
+  .card-body__button{
+    font-size: 0.4em;
+    margin-right: 3.8rem;
+  }
+}
+
+.card-body__button_span{
+  cursor: pointer;
+  color: #5C56F6;
+}

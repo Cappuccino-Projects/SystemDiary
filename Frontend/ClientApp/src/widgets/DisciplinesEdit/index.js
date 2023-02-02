@@ -1,0 +1,1 @@
+export { DisciplineEditBlock } from './DisciplinesEdit'

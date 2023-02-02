@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import '@Fonts/style.css';
+@import  './properties.scss';
+@import '@Themes/dark.theme.scss';
+@import '@Themes/main.theme.scss';
+@import '@Themes/debug.theme.scss';
+@import '@Mixins/body.mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
+.debug-mode i {
+    font-size: 1em;
+}
+
+@include bodyFontSize(48px);
+
+.page-title {
+    color: var(--color-page-title);
+}
+
+$media:
+    1890px 45px,
+    1740px 40px,
+    1440px 35px,
+    1320px, 30px;
+
+@each $breakPoint, $size in $media {
+    @media screen and (max-width: $breakPoint) {
+        @include bodyFontSize($size);
+    }
+}

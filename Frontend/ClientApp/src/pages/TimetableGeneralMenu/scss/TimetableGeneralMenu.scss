@@ -1,0 +1,266 @@
+$screen-width: calc((100vw - 750px) / (1920 - 750));
+$min-size: 71 * 0.01;
+
+
+@mixin width($property) {
+  $min-width: calc(($property * $min-size));
+  $min-width-px: ($min-width)px;
+  // $min-width + 
+  width: calc(300px + ($property - $min-width) * $screen-width);
+}
+
+@mixin height($property) {
+  $min-height: calc(($property * $min-size));
+  $min-height-px: ($min-height)px;
+  // $min-height + 
+  height: calc(300px + ($property - $min-height) * $screen-width);
+}
+
+.test {
+  height: 30px;
+  background-color: #b7681e;
+}
+
+/* Костыль для фона */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f4f8;
+}
+
+.page-timetable {
+
+  /* position: relative;
+    width: 100%; */
+  /* min-width: 100%;
+      min-height: 100%; */
+  /* position: relative; */
+  /* position: absolute; */
+  /* position: fixed; */
+  /* left: 0;
+    top: 0;
+    right: 0; */
+  /* bottom: 0; */
+  /* width: 100%;
+    height: 100%; */
+  background-color: #f3f4f8;
+  font-size: 48px;
+  /* zoom: 100%; */
+}
+
+.page-timetable:before {
+  /* content: "";
+    display: block;
+    padding-top: 100%;           /* initial ratio of 1:1 */
+}
+
+.timetable__content {
+  /* position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+  /* scale: 100% 100%; */
+  /*margin-top: 2.65%;*/
+  margin: auto;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* margin: auto; */
+  /* position: relative;
+    left: 0; top: 0;
+    right: 0; bottom: 0; */
+  background-color: transparent;
+  max-width: 1510px;
+  /* width: 100%; */
+  /* max-height: 865px; */
+  /* height: 100%; */
+  color: #9695af;
+  flex-flow: row wrap;
+  display: flex;
+  gap: 20px;
+  /* gap: calc(20px + 1rem); */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  justify-content: center;
+}
+
+/* @media (max-width: 1450px) {
+    .timetable__content {
+      flex-basis: calc((100% / 2) - 1rem);
+    }
+  } */
+
+.general-menu-block {
+  @include width(420);
+  @include height(420);
+  cursor: pointer;
+  /* width: 27.81%;
+    height: 27.81%;
+    min-width: 210px;
+    min-height: 210px;
+    max-width: 420px;
+    max-height: 420px; */
+  /* width: 420px; */
+  /* height: 27.81%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 3.97% 3.97% 2.65% 3.97%;
+  // width: calc(300px + (420 - 420 * $min-size) * $screen-width);
+  // height: calc(300px + (420 - 420 * $min-size) * $screen-width);
+  // padding: 60px 60px 40px 60px; //
+}
+
+.middleblock {
+  cursor: pointer;
+  /* width: 630px; */
+  /* width: 41.72%; */
+  height: calc(140px + (200 - 140) * ($screen-width));
+  /* height: 30%; */
+  display: flex;
+  align-items: center;
+  padding: 3.31% 2.65% 3.31% 2.65%;
+}
+
+.bigblock {
+  /* max-width: 630px;
+    width: 41.72%; */
+  width: calc(450px + (630 - 450) * ($screen-width));
+  /* height: calc(150px + (420 - 150) * ((100vw - 500px) / (1920 - 500))); */
+  /* height: 420px; */
+  padding: 2.65% 2.65% 3.31% 2.65%;
+}
+
+.general-menu-block,
+.middleblock {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.general-menu-block,
+.middleblock,
+.bigblock {
+  border-radius: 15px;
+  border-width: 5px;
+  background-color: #fff;
+  /* @media screen and (max-width: 760px) {
+      flex-basis: calc((100% / 1) - 1rem);
+    } */
+}
+
+.title {
+  /* font-size: calc(100% / (32px / var($tt-width) * 100)); */
+  /* font-size: 2.12vw; */
+  font-size: calc(22.85px + (32 - 22.85) * ($screen-width));
+  /* font-size: calc((32 / var(--tt-width) * 100)vw); */
+  /* font-size: 0.67em; */
+  /* font-size: calc(0.67em + 2.11vw); */
+  /* font-size: 100%; */
+}
+
+.day {
+  /*font-size: 1.32vw;*/
+  font-size: calc(14.28px + (20 - 14.28) * ($screen-width));
+  /* height: calc(20px + (30 - 20) * var(--screen-width)); */
+}
+
+.groups {
+  color: #b7681e;
+  font-size: calc(10.71px + (15 - 10.71) * ($screen-width));
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 0.86%;
+  margin-bottom: 1.32%;
+}
+
+.group {
+  background-color: #ffc500;
+  border-radius: 100px;
+  width: calc(75px + (100 - 75) * ($screen-width));
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.timetable__edit-block {
+  /* max-width: 630px;
+    width: 41.72%; */
+  width: calc(450px + (630 - 450) * ($screen-width));
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon {
+  /* max-width: 160px;
+    width: 10.6vw;
+    max-height: 142px;
+    height: 9.40vw; */
+  width: 50%;
+  height: 50%;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: contain !important;
+}
+
+.general-menu-block:hover,
+.middleblock:hover {
+  color: #fff;
+  background-color: #5c56f6;
+}
+
+/* @media (max-width: 700px) {
+    .title {
+      font-size: 32px;
+    }
+  
+    .day {
+      font-size: 20px;
+    }
+    
+    .groups {
+      font-size: 15px;
+    }
+  } */
+
+.timetable__view__icon {
+  background: url(./../image/general-timetable-view-timetable-icon.png);
+}
+
+.timetable__input__icon {
+  background: url(./../image/general-timetable-input-change-timetable-icon.png);
+}
+
+.timetable__excel-output__icon {
+  background: url(./../image/general-timetable-excel-output-timetable-icon.png);
+}
+
+.timetable__excel-change__icon {
+  background: url(./../image/general-timetable-excel-output-change-icon.png);
+}
+
+.timetable__edit-window__icon {
+  background: url(./../image/general-timetable-edit-timetable-icon.png);
+}
+.timetable__bell-window__icon {
+  background: url(./../image/general-timetable-bell-icon.png);
+}
+
+// .box { @include width(30px); }
+/*
+  @media screen and (max-width: 760px) {
+    .add-timetable__navigation__kurs {
+      width: calc(3*170px + 2*20px);
+      height: calc(2*60 + 20px);
+    }
+  
+    .kurs__block {
+      margin-bottom: 20px;
+      width: 70%;
+    }
+  }
+  */

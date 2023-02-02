@@ -1,0 +1,34 @@
+@import './../colors.scss';
+
+$bc: '--background';
+$c: '--color';
+
+.dark {
+    #{$bc}-menu: var(--color-darkgrey);
+    #{$bc}-menu-item-active: #363738;
+    #{$bc}-menu-item-hover: #5b56f6ab;
+    #{$bc}-header: var(--color-darkgrey);
+    #{$bc}-wrapper: var(--color-lightgrey);
+    #{$c}-main: #363738;
+    #{$c}-main-selected: #1D017C;
+    #{$c}-menu-items: #9695AF;
+    #{$c}-header-color: var(--color-menu-items);
+    #{$c}-header-title: var(--color-white);
+    #{$bc}-hot-task-card: var(--background-menu);
+    --calendar-header-background: #5C56F6;
+    --calendar-header-color: var(--color-white);
+    --calendar-day-date-color: rgba(0, 0, 0, 0.5);
+    --calendar-day-text-color: var(--color-dark);
+    #{$bc}-calendar-cell: #525355;
+    #{$c}-page-title: var(--color-white);
+    #{$bc}-tab: var(--background-menu);
+    #{$c}-tab: var(--color-white);
+    #{$c}-profile-nav: var(--color-grey);
+    #{$c}-profile-nav-hover: var(--color-white);
+    #{$c}-tabs-header: var(--color-white);
+    #{$bc}-tabs-header: var(--color-main);
+    #{$c}-tabs-header-active: var(--color-white);
+    #{$bc}-tabs-header-active: var(--color-blue);
+    #{$c}-headings: var(--color-white);
+    #{$bc}-card: var(--color-darkgrey);
+}

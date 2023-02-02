@@ -1,0 +1,23 @@
+@import '@Styles/properties.scss';
+
+.content {
+    width: $content-width;
+    height: auto;
+    margin: $content-margin;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1540px) { 
+    .content {
+        width: calc(100% - (2% + 240px) - ((100% - $container-width) / 2));
+        margin: $content-margin-min;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        width: $container-width;
+        margin: 0 auto;
+        margin-top: calc($header-height + 30px);
+    }
+}

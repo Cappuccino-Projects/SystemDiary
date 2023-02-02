@@ -1,0 +1,39 @@
+@import '@Styles/properties.scss';
+
+@mixin align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: $header-height;
+    background-color: var(--background-header);
+    @include align-items-center;
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.01);
+    -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 9999;
+
+    .title {
+        color: var(--color-header-title);
+    }
+
+}
+
+.header-inner {
+    width: 100%;
+    height: $header-inner-height;
+    @include align-items-center;
+    justify-content: space-between;
+}
+
+.left-side,
+.center,
+.right-side {
+    height: 100%;
+    width: auto;
+    @include align-items-center;
+    color: var(--color-header-color);
+}

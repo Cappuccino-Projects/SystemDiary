@@ -1,0 +1,56 @@
+@import '@Styles/properties.scss';
+
+$profile: "profile-nav";
+$title: "__title";
+
+.#{$profile} {
+    width: $profile-nav-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.#{$profile}__data {
+    display: flex;
+    flex-direction: column;
+    margin-right: 17px;
+}
+
+.#{$profile}__names,
+.#{$profile}__status {
+    height: calc($profile-height / 2);
+}
+
+p.#{$profile}__names#{$title} {
+    font-size: 20px;
+    color: var(--color-profile-nav);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transition: 0.3s;
+        color: var(--color-profile-nav-hover);
+    }
+}
+
+p.#{$profile}__status#{$title} {
+    font-size: 15px;
+}
+
+.#{$profile}__names {
+    display: flex;
+    align-items: flex-end;
+}
+
+.#{$profile}__status {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: var(--color-grey);
+}
+
+.#{$profile}__avatar {
+    width: $profile-height;
+    height: $profile-height;
+}
+

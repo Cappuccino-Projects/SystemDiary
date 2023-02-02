@@ -1,0 +1,5 @@
+@mixin bodyFontSize($size) {
+    body {
+        font-size: $size;
+    }
+}

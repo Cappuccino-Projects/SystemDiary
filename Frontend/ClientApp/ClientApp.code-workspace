@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../WebAPI"
+		},
+		{
+			"path": "../../Models"
+		},
+		{
+			"path": "../../Forms"
+		},
+		{
+			"path": "../../DataBaseContext"
+		}
+	],
+	"settings": {}
+}

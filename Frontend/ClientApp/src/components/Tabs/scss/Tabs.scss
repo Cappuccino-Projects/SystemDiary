@@ -1,0 +1,31 @@
+@import "@Mixins/flex.mixin.scss";
+
+$c: "tabs";
+
+.#{$c} {
+    @include flex-column();
+    height: auto;
+    width: 100%;
+    
+}
+
+.#{$c}__head {
+    @include flex-row();
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.#{$c}__head__title {
+    background-color: var(--background-tab);
+    color: var(--color-tab);
+    padding: 20px;
+    border-radius: 20px;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
+}
+
+.active_tab {
+    background-color: var(--background-tabs-header-active);
+    color: var(--color-tabs-header-active);
+}

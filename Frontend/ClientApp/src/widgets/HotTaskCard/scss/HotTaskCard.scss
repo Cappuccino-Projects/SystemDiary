@@ -1,0 +1,69 @@
+@import '@Styles/properties.scss';
+
+$c: ".hot-task-card";
+$r: $c + "__data";
+$t: $c + "__image";
+$y: $r + "__deadline";
+$margin: 15px;
+
+#{$c} {
+    width: $hot-task-card-width;
+    height: $hot-task-card-height;
+    background-color: var(--background-hot-task-card);
+    margin-top: $hot-task-card-margin-top;
+    margin-bottom: $hot-task-card-margin-bottom;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#{$r} {
+    width: 70%;
+    margin: calc($margin - 5px) $margin calc($margin - 5px) $margin;
+    height: $hot-task-card-height - calc($margin * 2) + 10px;
+}
+
+#{$t} {
+    width: 30%;
+    margin: calc($margin - 5px) 0px calc($margin - 5px) $margin;
+    height: $hot-task-card-height - calc($margin * 2) + 10px;
+}
+
+#{$r}__title {
+    height: auto;
+}
+
+#{$r}__description {
+    height: auto;
+}
+
+#{$r}__deadline {
+    height: 20px;
+}
+
+#{$r}__description {
+    p {
+        font-size: 0.31em;
+    }
+}
+
+#{$y} {
+    p {
+        font-size: 0.31em;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    #{$r}__title {
+        height: auto;
+    }
+
+    #{$c} {
+        height: auto;
+    }
+
+    #{$r} {
+        height: auto;
+    }
+}

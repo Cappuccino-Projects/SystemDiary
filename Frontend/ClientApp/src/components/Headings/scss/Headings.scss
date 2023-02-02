@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import '@Styles/properties.scss';
+
+:root {
+    --heading-font-size-h1: 1.0em;
+    --heading-font-size-h2: 0.8em;
+    --heading-font-size-h3: 0.7em;
+    --heading-font-size-h4: 0.6em;
+    --heading-font-size-h5: 0.5em;
+    --heading-font-size-h6: 0.4em;
+}
+
+h1.title-h1,
+h2.title-h2,
+h3.title-h3,
+h4.title-h4,
+h5.title-h5,
+h6.title-h6 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    margin-top: $font-margin-top;
+    margin-bottom: $font-margin-bottom;
+}
+
+$t: (
+    "h1.title-h1": --heading-font-size-h1,
+    "h2.title-h2": --heading-font-size-h2,
+    "h3.title-h3": --heading-font-size-h3,
+    "h4.title-h4": --heading-font-size-h4,
+    "h5.title-h5": --heading-font-size-h5,
+    "h6.title-h6": --heading-font-size-h6
+);
+
+@each $e,
+$f in $t {
+    #{$e} {
+        font-size: var($f);
+        color: var(--color-headings);
+    }
+}

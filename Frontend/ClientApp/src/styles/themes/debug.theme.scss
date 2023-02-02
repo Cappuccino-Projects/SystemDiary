@@ -1,0 +1,9 @@
+@mixin setDebugColor($color, $bc) {
+  outline: 1px solid $color !important;
+  background-color: $bc !important;
+}
+
+.debug-mode-enabled * {
+  @include setDebugColor(rgb(0, 162, 255), rgba(0, 132, 255, 0.507));
+  color:rgb(0, 68, 131) !important;
+}

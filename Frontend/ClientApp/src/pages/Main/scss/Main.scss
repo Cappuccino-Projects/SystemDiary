@@ -1,0 +1,36 @@
+@import "@Styles/properties.scss";
+
+$main: "main-page__columns";
+
+.#{$main} {
+  display: flex;
+  flex-direction: row;
+  margin-top: $page-margin-top;
+}
+
+.#{$main}__tasks {
+  width: 40%;
+  height: auto;
+  margin-right: 1.5%;
+}
+
+.#{$main}__calendar {
+  width: 57%;
+  height: auto;
+  margin-left: 1.5%;
+}
+
+@media screen and (max-width: 1200px) {
+  .#{$main} {
+    flex-direction: column-reverse;
+  }
+
+  .#{$main}__tasks {
+    width: 100%;
+  }
+
+  .#{$main}__calendar {
+    width: 100%;
+    margin-left: 0;
+  }
+}

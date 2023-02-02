@@ -1,0 +1,22 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    transition: .5s;
+}
+
+.wrapper {
+    background-color: var(--background-wrapper);
+}
+
+.wrapper-flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}

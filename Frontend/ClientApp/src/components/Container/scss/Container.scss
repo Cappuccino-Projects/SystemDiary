@@ -1,0 +1,8 @@
+@import '@Styles/properties.scss';
+
+.container {
+    width: $container-width;
+    min-width: $container-min-width;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "allowSyntheticDefaultImports": false,
+      "baseUrl": "./",
+      "paths": {
+        "@Components/*": ["./src/components/*"],
+        "@Styles/*": ["./src/styles/*"],
+        "@Themes/*": ["./src/styles/themes/*"],
+        "@Pages/*": ["./src/pages/*"],
+        "@Contexts": ["./src/contexts/*"],
+        "@Fonts/*": ["./src/fonts"],
+        "@Layout/*": ["./src/layouts/*"],
+        "@Reducers/*": ["./src/reducers/*"],
+        "@Hooks/*": ["./src/hooks/*"],
+        "@Mixins/*": ["./src/styles/mixins"],
+        "@Routes/*": ["./src/routes/*"]
+      }
+    },
+    "exclude": ["node_modules"]
+  }

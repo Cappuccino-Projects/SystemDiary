@@ -1,0 +1,25 @@
+.user-list {
+
+    $item: 'user-list__item';
+
+    .#{$item} {
+        list-style: none;
+
+        $padding-value: 20px;
+        $padding: 0 $padding-value 0 $padding-value;
+
+        .#{$item}__card {
+            width: calc(50% + $padding-value);
+            min-width: 300px;
+            padding: $padding;
+            height: 60px;
+            background-color: #ffffff;
+            margin: 10px 0 10px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.4em;
+        }
+    }
+}

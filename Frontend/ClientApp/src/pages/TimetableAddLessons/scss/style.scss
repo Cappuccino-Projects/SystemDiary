@@ -1,0 +1,216 @@
+.add-timetable__navigation {
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 0.41em;
+  margin-top: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+}
+
+/*###########################################################################*/
+/*СТИЛИ ДЛЯ ГРУПП*/
+/*###########################################################################*/
+
+/*БЛОК С КУРСОМ / ГРУППОЙ*/
+.container__block {
+  border-radius: 10px;
+  padding: 20px 50px 20px 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.container__block:hover {
+  background-color: #AEABFB;
+  color: #1D017C;
+}
+
+.container__block span {
+  align-items: center;
+}
+
+/*БЛОК С ВЫБРАННЫМ КУРСОМ*/
+.container__block__selected-kurs {
+  border-radius: 10px;
+  padding: 20px 50px 20px 50px;
+  background-color: #5C56F6;
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+/*ИКОНКА ДЛЯ ЗАПОЛНЕННЫХ БЛОКОВ*/
+.container__block__completed-icon {
+  background-color: #5C56F6;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+  outline: 2px white dashed;
+}
+
+
+/*БЛОК С ВЫБРАННЫМ КУРСОМ*/
+.container__block__selected-kurs::after {
+  content: '';
+  position: absolute;
+  /* Абсолютное позиционирование */
+  bottom: -15px;
+  /* Положение треугольника */
+  border: 40px solid transparent;
+  /* Прозрачные границы */
+  border-top: 15px solid #5C56F6;
+  /* Добавляем треугольник */
+  border-width: 10px 20px 5px;
+}
+
+/*###########################################################################*/
+/*СТИЛИ ДЛЯ СПЕЦИАЛЬНОСТЕЙ*/
+/*###########################################################################*/
+
+.add-timetable-specific {
+  width: auto;
+
+}
+
+/*КОНТЕЙНЕР ДЛЯ БЛОКОВ СО СПЕЦИАЛЬНОСТЬЮ*/
+.add-timetable__navigation__faculty {
+  display: flex;
+}
+
+/*МЕНЮ ПОДРОБНЕЕ ДЛЯ CGBCRF СПЕЦИАЛЬНОСТЕЙ*/
+.navigation__faculty__choose {
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.navigation__more-menu {
+  background-color: white;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #9695AF;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.icon-fi-rr-angle-down {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 12px;
+}
+
+/*Нажатие и открытие списка*/
+.navigation__more-menu:hover {
+  outline: 2px #5C56F6 solid;
+  color: #5C56F6;
+}
+
+.navigation__more-menu:active {
+  rotate: 180deg;
+  margin-top: auto;
+  transform: translateY(+50%);
+}
+
+/*БЛОК СО СПЕЦИАЛЬНОСТЬЮ*/
+.faculty__block {
+  font-size: 0.9em;
+  border-radius: 10px;
+  background-color: white;
+  width: auto;
+  height: 100%;
+  max-width: 460px;
+  max-height: 100px;
+  gap: 5px;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.faculty__block:hover {
+  background-color: #AEABFB;
+  color: #1D017C;
+}
+
+/*ВЫБРАННЫЙ БЛОК СО СПЕЦИАЛЬНОСТЬЮ*/
+.faculty__block__selected {
+  background-color: #2C01C3;
+  border-radius: 10px;
+  color: white;
+  gap: 20px;
+  width: auto;
+  max-width: 35%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px 10px 20px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+}
+
+.faculty__block__selected::after {
+  content: '';
+  position: absolute;
+  /* Абсолютное позиционирование */
+  left: auto;
+  bottom: -15px;
+  /* Положение треугольника */
+  border: 40px solid transparent;
+  /* Прозрачные границы */
+  border-top: 15px solid #2C01C3;
+  /* Добавляем треугольник */
+  border-width: 10px 20px 5px;
+}
+
+/*###########################################################################*/
+/*СТИЛИ ДЛЯ ГРУПП*/
+/*###########################################################################*/
+
+/*ВЫБРАННАЯ ГРУППА*/
+.container__block__selected-group {
+  border-radius: 10px;
+  background-color: #1D017C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 20px;
+  position: relative;
+  padding: 20px 45px 20px 45px;
+}
+
+.container__block__selected-group::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  border: 40px solid transparent;
+  border-top: 15px solid #1D017C;
+  border-width: 10px 20px 5px;
+}
+
+.tab-item__specialy {
+  text-align: start;
+}
+
+/*###########################################################################*/
+
+@media (max-width: 1130px) {
+  .faculty__block__selected {
+    max-width: 100%;
+  }
+
+}

@@ -1,0 +1,22 @@
+$button: "menu_button";
+$buttonScale: 40px;
+
+.#{$button} {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .#{$button} {
+        display: flex;
+        align-items: center;
+
+        .#{$button}-action-mobile-button {
+            width: $buttonScale;
+            height: $buttonScale;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 0.5em;
+        }
+    }
+}

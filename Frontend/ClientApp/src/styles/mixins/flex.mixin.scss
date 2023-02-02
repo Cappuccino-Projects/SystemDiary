@@ -1,0 +1,23 @@
+@mixin flex() {
+    display: flex;
+}
+
+@mixin flex-row() {
+    @include flex();
+    flex-direction: row;
+}
+
+@mixin flex-column() {
+    @include flex();
+    flex-direction: column;
+}
+
+@mixin flex-wrap() {
+    @include flex();
+    flex-wrap: wrap;
+}
+
+@mixin flex-row-reverse() {
+    @include flex();
+    flex-direction: row-reverse;
+}
