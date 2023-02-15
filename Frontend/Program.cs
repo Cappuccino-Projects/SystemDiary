@@ -16,11 +16,16 @@ builder.Services.AddCors(p => p.AddDefaultPolicy(build =>
         .AllowAnyMethod();
 }));
 
+
+#if !MOCKED
+
 var _connectionConfig =
     builder.Configuration.GetSection("DataBase").Value;
 
 builder.Services.AddDbContext<IDataBaseContext, MssqlContext>(
     options => options.UseSqlServer(_connectionConfig));
+
+#endif
 
 var jwtOptions = builder.Configuration.GetSection("JWT").Get<JWTOptions>();
 
@@ -45,11 +50,9 @@ app.UseCors(builder =>
     .AllowAnyMethod()
     .AllowAnyHeader();
 });
+
 app.UseCors();
-
 app.UseCookiePolicy();
-
-// app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.MapControllerRoute(
