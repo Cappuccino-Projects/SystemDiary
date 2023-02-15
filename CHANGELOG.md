@@ -10,3 +10,5 @@
 ### Багофикс
 
 ### Рефакторинг
+
++ Изменено пространство имён WebAPI -> Cappuccino.SystemDiary.WebAPI

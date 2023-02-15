@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Extensions
+﻿namespace Cappuccino.SystemDiary.WebAPI.Extensions
 {
     public static class WebApiMiddlewareExceptions
     {

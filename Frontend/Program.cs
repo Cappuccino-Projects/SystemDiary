@@ -1,7 +1,7 @@
+using Cappuccino.SystemDiary.WebAPI.Extensions;
 using DataBaseContext.Interfaces;
 using DataBaseContext.Mssql;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Extensions;
 using WebAPI.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +24,12 @@ var _connectionConfig =
 
 builder.Services.AddDbContext<IDataBaseContext, MssqlContext>(
     options => options.UseSqlServer(_connectionConfig));
+
+#endif
+
+#if MOCKED
+
+    // TODO: Добавить мок
 
 #endif
 

@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using WebAPI.Options;
 
-namespace WebAPI.Extensions
+namespace Cappuccino.SystemDiary.WebAPI.Extensions
 {
     public static class WebApiExtension
     {
