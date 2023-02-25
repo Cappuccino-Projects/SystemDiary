@@ -1,7 +1,7 @@
 ﻿using DataBaseContext.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers.Associations
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Associations
 {
     [Route("api/[controller]")]
     [ApiController]

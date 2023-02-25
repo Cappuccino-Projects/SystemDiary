@@ -1,11 +1,11 @@
-﻿using DataBaseContext.Factories;
+﻿using Cappuccino.SystemDiary.Factories.Factories;
 using DataBaseContext.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Models.Associations;
 using Models.Auth;
 using Models.Disciplines;
 using Models.Groups;
-using Models.Jurnal;
+using Models.Journal;
 using Models.Marks;
 using Models.News;
 using Models.Timetable;
@@ -51,7 +51,7 @@ namespace DataBaseContext.Mssql
 
         public DbSet<UserRoleModel> GetUserRoles() => UserRoles;
 
-
+        // Вынести это отсюды
         public void CreateDefaultValues()
         {
             MarkStateFactory markStateFactory = new();
@@ -77,17 +77,19 @@ namespace DataBaseContext.Mssql
             UserRoleFactory userRoleFactory = new();
             userRoleFactory.Create();
             userRoleFactory.UserRoleModels
+                .ToList()
                 .ForEach(i => UserRoles.Add(i));
 
 
             UserStateFactory userStateFactory = new();
             userStateFactory.Create();
             userStateFactory.UserStates
+                .ToList()
                 .ForEach(i => UserStates.Add(i));
 
-            JurnalStateFactory jurnalStateFactory = new();
-            jurnalStateFactory.Create();
-            jurnalStateFactory.JurnalStateModels
+            JurnalStateFactory journalStateFactory = new();
+            journalStateFactory.Create();
+            journalStateFactory.JurnalStateModels
                 .ForEach(i => JournalStates.Add(i));
 
             SaveChanges();

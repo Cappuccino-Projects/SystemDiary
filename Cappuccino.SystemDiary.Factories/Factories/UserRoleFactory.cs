@@ -1,44 +1,45 @@
-﻿using DataBaseContext.Abstract;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
+using Cappuccino.SystemDiary.Factories.Others;
 using Models.Users;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class UserRoleFactory : FactoryAbstract
     {
-        private List<UserRoleModel> userRoleModels = new();
+        private List<UserRoleModel> _userRoleModels = new();
 
-        public List<UserRoleModel> UserRoleModels { get => userRoleModels; set => userRoleModels = value; }
+        public IReadOnlyCollection<UserRoleModel> UserRoleModels => _userRoleModels;
 
         public override void Create()
         {
-            userRoleModels.Add(new() 
+            _userRoleModels.Add(new UserRoleModel
             {
                 Id = Guid.NewGuid(),
-                Name = "Администратор",
+                Name = ConstantName.Administrator,
                 Description = "Администратор системы SystemDiary",
                 BackendName = "backend_admin"
             });
 
-            userRoleModels.Add(new() 
+            _userRoleModels.Add(new UserRoleModel
             {
                 Id = Guid.NewGuid(),
-                Name = "Преподаватель",
-                Description = "Препадаёт",
+                Name = ConstantName.Teacher,
+                Description = "Преподаёт",
                 BackendName = "backend_teacher"
             });
 
-            userRoleModels.Add(new()
+            _userRoleModels.Add(new UserRoleModel
             {
                 Id = Guid.NewGuid(),
-                Name = "Студент",
+                Name = ConstantName.Student,
                 Description = "Тот кто обучается",
                 BackendName = "backend_student"
             });
 
-            userRoleModels.Add(new()
+            _userRoleModels.Add(new UserRoleModel
             {
                 Id = Guid.NewGuid(),
-                Name = "Оператор",
+                Name = ConstantName.Operator,
                 Description= "Разработчик расписания",
                 BackendName = "backend_operator"
             });

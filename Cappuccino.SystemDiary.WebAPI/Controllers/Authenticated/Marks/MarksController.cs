@@ -1,10 +1,10 @@
 ﻿using DataBaseContext.Interfaces;
+using Forms.Jurnals;
 using Microsoft.AspNetCore.Mvc;
-using Models.Jurnal;
+using Models.Journal;
 using Models.Marks;
-using Forms.Jurnal;
 
-namespace WebAPI.Controllers.Marks
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Marks
 {
     [Route("api/auth/marks")]
     [ApiController]

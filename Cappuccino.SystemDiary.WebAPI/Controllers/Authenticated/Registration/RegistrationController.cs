@@ -1,14 +1,11 @@
 ﻿using DataBaseContext.Interfaces;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Forms.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Forms.Auth;
 using Models.Users;
 using ModelValidator.ModelsValidator;
-using System.Security.Claims;
 
-namespace WebAPI.Controllers.Auth
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Registration
 {
     [Route("api/auth/admin")]
     [ApiController]

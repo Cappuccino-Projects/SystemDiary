@@ -1,5 +1,8 @@
-﻿using DataBaseContext.Interfaces;
-using Forms.Authirization;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Cappuccino.SystemDiary.WebAPI.Options;
+using DataBaseContext.Interfaces;
+using Forms.Auth;
 using Forms.JWT;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -8,11 +11,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Models.Users;
 using ModelValidator.ModelsValidator;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using WebAPI.Options;
 
-namespace WebAPI.Controllers.Public.Auth
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Public.Auth
 {
     /// <summary>
     /// Контроллер отвечающий за авторизацию, 

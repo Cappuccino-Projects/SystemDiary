@@ -1,10 +1,9 @@
 ﻿using DataBaseContext.Interfaces;
 using Forms.Jurnals;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Models.Jurnal;
+using Models.Journal;
 
-namespace WebAPI.Controllers.Jurnals
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Jurnals
 {
     [Route("api/auth/journal")]
     [ApiController]

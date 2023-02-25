@@ -1,10 +1,10 @@
 ﻿using DataBaseContext.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Models.Disciplines;
 using Forms.Disciplines;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Models.Disciplines;
 
-namespace WebAPI.Controllers.Disciplines
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Disciplines
 {
     /// <summary> 
     /// Контроллер отвечающий за работу с дисциплинами

@@ -1,11 +1,9 @@
 ﻿using DataBaseContext.Interfaces;
 using Forms.Groups;
 using Microsoft.AspNetCore.Mvc;
-using Models.Associations;
 using Models.Groups;
-using Models.Users;
 
-namespace WebAPI.Controllers.Group
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Group
 {
     [Route("api/[controller]")]
     [ApiController]

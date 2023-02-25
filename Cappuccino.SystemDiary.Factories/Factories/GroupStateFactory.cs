@@ -1,7 +1,7 @@
-﻿using DataBaseContext.Abstract;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
 using Models.Groups;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class GroupStateFactory : FactoryAbstract
     {

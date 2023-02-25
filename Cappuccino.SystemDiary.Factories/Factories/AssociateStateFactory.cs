@@ -1,28 +1,28 @@
-﻿using DataBaseContext.Abstract;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
 using Models.Associations;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class AssociateStateFactory : FactoryAbstract
     {
-        private List<AssociateStateModel> associateStateModels = new();
+        private List<AssociateStateModel> _associateStateModels = new();
 
         public List<AssociateStateModel> AssociateStateModels 
         { 
-            get => associateStateModels; 
-            set => associateStateModels = value; 
+            get => _associateStateModels; 
+            set => _associateStateModels = value; 
         }
 
         public override void Create()
         {
-            associateStateModels.Add(new()
+            _associateStateModels.Add(new()
             {
                 Id = Guid.NewGuid(),
                 Name = "Ассоциация активна",
                 Description = "Эта ассоциация активна"
             });
 
-            associateStateModels.Add(new()
+            _associateStateModels.Add(new()
             {
                 Id = Guid.NewGuid(),
                 Name = "Ассоциация удалена",

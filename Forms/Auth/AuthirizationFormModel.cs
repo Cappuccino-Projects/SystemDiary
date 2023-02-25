@@ -1,6 +1,6 @@
 ﻿using Forms.Abstract;
 
-namespace Forms.Authirization
+namespace Forms.Auth
 {
     public sealed class AuthirizationFormModel : FormAbstract
     {

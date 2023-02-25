@@ -1,10 +1,9 @@
-﻿using Models.Abstract;
-using Models.Associations;
-using Models.Marks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Abstract;
+using Models.Marks;
 
-namespace Models.Jurnal
+namespace Models.Journal
 {
     [Table("jurnal_marks")]
     public sealed class JournalMarkModel : ModelAbstract

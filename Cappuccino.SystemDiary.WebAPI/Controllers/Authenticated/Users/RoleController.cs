@@ -3,7 +3,7 @@ using Forms.Users;
 using Microsoft.AspNetCore.Mvc;
 using Models.Users;
 
-namespace WebAPI.Controllers.Users
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Users
 {
     [Route("api/[controller]")]
     [ApiController]

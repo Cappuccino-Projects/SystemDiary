@@ -1,10 +1,9 @@
-﻿using Models.Abstract;
-using Models.Associations;
-using Models.Groups;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Abstract;
+using Models.Groups;
 
-namespace Models.Jurnal
+namespace Models.Journal
 {
     [Table("journal")]
     public sealed class JournalModel : ModelAbstract

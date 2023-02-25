@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Cappuccino.SystemDiary.WebAPI.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
-using WebAPI.Options;
 
 namespace Cappuccino.SystemDiary.WebAPI.Extensions
 {

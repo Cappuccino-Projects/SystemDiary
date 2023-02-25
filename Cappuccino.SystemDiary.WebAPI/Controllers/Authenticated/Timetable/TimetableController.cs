@@ -3,7 +3,7 @@ using Forms.Timetable;
 using Microsoft.AspNetCore.Mvc;
 using Models.Timetable;
 
-namespace WebAPI.Controllers.Authenticated.Timetable
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Timetable
 {
     /// <summary>
     /// Контроллер отвечающий за работу с расписанием

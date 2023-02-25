@@ -1,6 +1,6 @@
 ﻿using Forms.Abstract;
 
-namespace Forms.Jurnal
+namespace Forms.Jurnals
 {
     public sealed class SetJurnalMarkForm : FormAbstract
     {

@@ -13,11 +13,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Configurations>Debug;Release;Mocked</Configurations>
     <Company>Cappuccino</Company>
+    <AssemblyVersion>0.0.1.51</AssemblyVersion>
+    <FileVersion>0.0.1.51</FileVersion>
+    <NeutralLanguage>ru-RU</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,11 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cappuccino.SystemDiary.DataBaseInMemory\Cappuccino.SystemDiary.DataBaseInMemory.csproj" />
+    <ProjectReference Include="..\Cappuccino.SystemDiary.WebAPI\Cappuccino.SystemDiary.WebAPI.csproj" />
     <ProjectReference Include="..\DataBaseContext\DataBaseContext.csproj" />
     <ProjectReference Include="..\Forms\Forms.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\ModelValidator\ModelValidator.csproj" />
-    <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

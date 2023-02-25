@@ -1,29 +1,24 @@
-﻿using DataBaseContext.Abstract;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
 using Models.Users;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class UserStateFactory : FactoryAbstract
     {
-        private List<UserStateModel> userStates = 
-            new List<UserStateModel>();
+        private List<UserStateModel> _userStates = new();
 
-        public List<UserStateModel> UserStates 
-        { 
-            get => userStates; 
-            set => userStates = value; 
-        }
+        public IReadOnlyCollection<UserStateModel> UserStates => _userStates;
 
         public override void Create()
         {
-            userStates.Add(new UserStateModel()
+            _userStates.Add(new UserStateModel()
             {
                 Id = Guid.NewGuid(),
                 Name = "Активный",
                 Description = "Работоспособный аккаунт"
             });
 
-            userStates.Add(new UserStateModel() {
+            _userStates.Add(new UserStateModel() {
                 Id = Guid.NewGuid(),
                 Name = "Не активный",
                 Description = "Аккаунт не активный"

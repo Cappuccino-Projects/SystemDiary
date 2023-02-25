@@ -1,8 +1,8 @@
-﻿using Models.Abstract;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Abstract;
 
-namespace Models.Jurnal
+namespace Models.Journal
 {
     [Table("jurnal_states")]
     public sealed class JournalStateModel : ModelAbstract

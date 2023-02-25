@@ -1,70 +1,89 @@
+using Cappuccino.SystemDiary.DataBaseInMemory.Factories;
+using Cappuccino.SystemDiary.DataBaseInMemory.Mssql;
 using Cappuccino.SystemDiary.WebAPI.Extensions;
+using Cappuccino.SystemDiary.WebAPI.Options;
 using DataBaseContext.Interfaces;
 using DataBaseContext.Mssql;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Options;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace Frontend;
 
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddCors(p => p.AddDefaultPolicy(build => 
+public sealed class Program
 {
-    build
-        .WithOrigins("https://localhost:44458")
-        .AllowAnyHeader()
-        .AllowAnyMethod();
-}));
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        builder.Logging.ClearProviders();
+        builder.Logging.AddConsole();
+
+        builder.Services.AddControllersWithViews();
+
+        builder.Services.AddCors(p => p.AddDefaultPolicy(build =>
+        {
+            build
+                .WithOrigins("https://localhost:44458")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        }));
 
 
 #if !MOCKED
+		var _connectionConfig =
+			builder.Configuration.GetSection("DataBase").Value;
 
-var _connectionConfig =
-    builder.Configuration.GetSection("DataBase").Value;
-
-builder.Services.AddDbContext<IDataBaseContext, MssqlContext>(
-    options => options.UseSqlServer(_connectionConfig));
+		builder.Services.AddDbContext<IDataBaseContext, MssqlContext>(
+			options => options.UseSqlServer(_connectionConfig));
 
 #endif
 
 #if MOCKED
 
-    // TODO: Добавить мок
+        builder.Services.AddDbContext<IDataBaseContext, InMemoryContext>(
+            options => options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
 
 #endif
 
-var jwtOptions = builder.Configuration.GetSection("JWT").Get<JWTOptions>();
+        var jwtOptions = builder.Configuration.GetSection("JWT").Get<JWTOptions>();
 
-builder.Services.AddWebAPI(builder, jwtOptions);
+        builder.Services.AddWebAPI(builder, jwtOptions);
 
 
-var app = builder.Build();
+        var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHsts();
+#if MOCKED
+
+        //var factoryData = new FactoryData(app.Services.GetService<IDataBaseContext>());
+
+#endif
+
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseHsts();
+        }
+
+
+        app.UseWebApi();
+
+        app.UseRouting();
+        app.UseCors(builder =>
+        {
+            builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+
+        app.UseCors();
+        app.UseCookiePolicy();
+        app.UseStaticFiles();
+
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller}/{action=Index}/{id?}");
+
+        app.MapFallbackToFile("index.html");
+
+        app.Run();
+    }
 }
-
-
-app.UseWebApi();
-
-app.UseRouting();
-app.UseCors(builder =>
-{
-    builder
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader();
-});
-
-app.UseCors();
-app.UseCookiePolicy();
-app.UseStaticFiles();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-
-app.MapFallbackToFile("index.html");
-
-app.Run();

@@ -1,7 +1,7 @@
-﻿using DataBaseContext.Abstract;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
 using Models.Disciplines;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class DisciplineStateFactory : FactoryAbstract
     {

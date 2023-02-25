@@ -1,7 +1,7 @@
-﻿using DataBaseContext.Abstract;
-using Models.Jurnal;
+﻿using Cappuccino.SystemDiary.Factories.Abstract;
+using Models.Journal;
 
-namespace DataBaseContext.Factories
+namespace Cappuccino.SystemDiary.Factories.Factories
 {
     public sealed class JurnalStateFactory : FactoryAbstract
     {

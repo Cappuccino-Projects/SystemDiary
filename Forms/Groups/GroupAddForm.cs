@@ -1,6 +1,6 @@
 ﻿using Forms.Abstract;
 
-namespace Models.Groups
+namespace Forms.Groups
 {
     public sealed class GroupAddForm : FormAbstract
     {

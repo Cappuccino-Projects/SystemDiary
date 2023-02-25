@@ -1,11 +1,9 @@
 ﻿using DataBaseContext.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Models.Users;
 
-namespace WebAPI.Controllers.Users
+namespace Cappuccino.SystemDiary.WebAPI.Controllers.Authenticated.Users
 {
     [Route("api/auth/user")]
     [ApiController]

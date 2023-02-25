@@ -1,7 +1,7 @@
 ﻿using Models.Disciplines;
-using Models.Jurnal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Journal;
 
 namespace Models.Associations
 {

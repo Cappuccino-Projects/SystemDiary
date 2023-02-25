@@ -1,7 +1,7 @@
 ﻿using Models.Abstract;
-using Models.Jurnal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Journal;
 
 namespace Models.Marks
 {
