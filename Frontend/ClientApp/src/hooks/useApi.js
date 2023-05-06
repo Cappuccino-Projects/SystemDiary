@@ -4,8 +4,7 @@ import {
 } from 'react'
 
 export function useApi() {
-
-  const HOST = 'https://26.105.105.194:7177/';
+  const HOST = `http://${process.env.REACT_APP_API_ADDRESS}:${process.env.REACT_APP_API_PORT}/`;
   const [error, setError] = useState();
 
   /**

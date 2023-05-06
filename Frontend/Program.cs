@@ -53,7 +53,7 @@ public sealed class Program
 
 #if MOCKED
 
-        //var factoryData = new FactoryData(app.Services.GetService<IDataBaseContext>());
+        var factoryData = new FactoryData(app.Services.GetService<IDataBaseContext>());
 
 #endif
 
@@ -76,13 +76,13 @@ public sealed class Program
 
         app.UseCors();
         app.UseCookiePolicy();
-        app.UseStaticFiles();
+        // app.UseStaticFiles();
 
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller}/{action=Index}/{id?}");
+        // app.MapControllerRoute(
+        //     name: "default",
+        //     pattern: "{controller}/{action=Index}/{id?}");
 
-        app.MapFallbackToFile("index.html");
+        // app.MapFallbackToFile("index.html");
 
         app.Run();
     }

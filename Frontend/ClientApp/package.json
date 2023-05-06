@@ -45,7 +45,6 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "prestart": "node aspnetcore-https && node aspnetcore-react",
     "start": "rimraf ./build && react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "cross-env CI=true react-app-rewired test --env=jsdom",

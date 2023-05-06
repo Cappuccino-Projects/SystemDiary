@@ -1,8 +1,8 @@
 const createProxyMiddleware = require('http-proxy-middleware');
 const { env } = require('process');
 
-const target = env.ASPNETCORE_HTTPS_PORT ? `https://26.105.105.194:${env.ASPNETCORE_HTTPS_PORT}` :
-  env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://26.105.105.194:39126';
+const target = env.API_PORT ? `https://127.0.0.1:${env.PORT}` :
+  env.REACT_APP_API_ADDRESS ? env.REACT_APP_API_ADDRESS : 'http://127.0.0.1:7468';
 
 const context =  [
   "/api",

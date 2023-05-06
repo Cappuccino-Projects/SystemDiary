@@ -1,5 +1,19 @@
 # CHANGELOGS
 
+## version - 0.0.1.52 - 6 мая 2023 - [letnull19a](https://github.com/letnull19A)
+
+### Добавлено
+
++ Поддержка контейнеров Docker
+
+### Багофикс
+
+### Изменения
+
++ Отделение от Frontend и containerzation!
+
+### Рефакторинг
+
 ## version - 0.0.1.51 - 25 февраля 2023 - [letnull19a](https://github.com/letnull19A)
 
 ### Добавлено
